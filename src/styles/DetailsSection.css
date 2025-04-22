@@ -1,0 +1,108 @@
+.principal-date-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.flower-decoration {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.flower-icon {
+  width: 50px;
+  height: auto;
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.birthday-title {
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.info-card {
+  background-color: var(--card);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.info-card:hover {
+  transform: scale(1.05);
+}
+
+.info-card-inner {
+  padding: 20px;
+  text-align: center;
+}
+
+.info-label {
+  font-size: 16px;
+  color: var(--muted-foreground);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.info-value {
+  font-size: 18px;
+  color: var(--foreground);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--primary-foreground);
+  background-color: var(--primary);
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: var(--secondary);
+  color: var(--foreground);
+}
+
+.button-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.calendar-button {
+  background-color: #a7d1ab;
+}
+
+.location-button {
+  background-color: #ffeb3b;
+  color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr; /* Stack items on smaller screens */
+  }
+
+  .info-card {
+    margin-bottom: 10px; /* Add spacing between cards */
+  }
+
+  .info-value {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+
