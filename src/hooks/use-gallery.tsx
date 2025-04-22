@@ -31,4 +31,3 @@ export const useGallery = (imageCount: number) => {
     goToImage,
   };
 };
-/

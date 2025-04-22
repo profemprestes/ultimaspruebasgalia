@@ -3,4 +3,3 @@ export const CONSTANTS = {
   eventLocation: "123 Main Street, Anytown",
   eventTheme: "Galia's First Adventure",
 };
-/
