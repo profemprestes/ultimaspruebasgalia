@@ -1,13 +1,16 @@
 'use client';
 
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import '@/styles/hero-section.css';
 import {Button} from '@/components/ui/button';
 import {Card, CardContent} from '@/components/ui/card';
 import {MapPinIcon, CalendarIcon} from 'lucide-react';
+import {CountdownTimer} from "@/components/invitation/CountdownTimer";
+import {CONSTANTS} from "@/lib/constants";
 
 export const HeroSection: React.FC = () => {
   const backgroundRef = useRef<HTMLDivElement>(null);
+  const [eventInProgress, setEventInProgress] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +21,12 @@ export const HeroSection: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+
+    // Check if the event is in progress
+    const now = new Date();
+    if (now >= CONSTANTS.eventDate) {
+      setEventInProgress(true);
+    }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -50,6 +59,14 @@ export const HeroSection: React.FC = () => {
               10 de Mayo de 2024 | 13:00 - 18:00
             </p>
           </div>
+
+          {/* Conditionally render either the countdown timer or the event in progress message */}
+          {eventInProgress ? (
+            <p className="hero__event-in-progress">¡El evento está en curso!</p>
+          ) : (
+            <CountdownTimer eventDate={CONSTANTS.eventDate} />
+          )}
+
           <p className="hero__invitation-text">
             ¡Tu presencia hará este día aún más especial!
           </p>

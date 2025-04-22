@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useCountdown } from "@/hooks/use-countdown";
+import React from "react";
 
 interface CountdownTimerProps {
   eventDate: Date;
@@ -10,36 +9,27 @@ interface CountdownTimerProps {
 export const CountdownTimer: React.FC<CountdownTimerProps> = ({
   eventDate,
 }) => {
-  const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const now = new Date();
+  const difference = eventDate.getTime() - now.getTime();
 
-  useEffect(() => {
-    const updateCountdown = () => {
-      const now = new Date();
-      const difference = eventDate.getTime() - now.getTime();
+  let days = 0;
+  let hours = 0;
+  let minutes = 0;
+  let seconds = 0;
 
-      if (difference > 0) {
-        setDays(Math.floor(difference / (1000 * 60 * 60 * 24)));
-        setHours(Math.floor(
-          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        ));
-        setMinutes(Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)));
-        setSeconds(Math.floor((difference % (1000 * 60)) / 1000));
-      } else {
-        setDays(0);
-        setHours(0);
-        setMinutes(0);
-        setSeconds(0);
-      }
-    };
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-
-    return () => clearInterval(interval);
-  }, [eventDate]);
+    if (difference > 0) {
+       days = Math.floor(difference / (1000 * 60 * 60 * 24));
+       hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+       minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+       seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    } else {
+       days = 0;
+       hours = 0;
+       minutes = 0;
+       seconds = 0;
+    }
 
   return (
     <div className="countdown-timer">
