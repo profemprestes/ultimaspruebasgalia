@@ -13,11 +13,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
   return (
     <div className="intro-section">
       <div className="background-animation">
-        <img
-          src="/img/daisy.png"
-          alt="Daisy"
-          className="daisy daisy-1"
-        />
+        <img src="/img/daisy.png" alt="Daisy" className="daisy daisy-1" />
         <img
           src="/img/balloon2.jpg"
           alt="Balloon"
@@ -33,11 +29,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
           alt="Balloon"
           className="balloon balloon-3"
         />
-        <img
-          src="/img/daisy.png"
-          alt="Daisy"
-          className="daisy daisy-2"
-        />
+        <img src="/img/daisy.png" alt="Daisy" className="daisy daisy-2" />
       </div>
       <div className="intro-content">
         <header className="intro-header">
@@ -53,13 +45,18 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
           onClick={onProceed}
           className="proceed-button"
           style={{
-            backgroundColor: "green",
+            backgroundColor: "var(--secondary)",
+            color: "var(--secondary-foreground)",
+            border: "2px solid var(--accent)",
+            borderRadius: "var(--radius-md)",
+            padding: "10px 20px",
+            fontSize: "1.1em",
           }}
           onMouseOver={(e) => {
             e.currentTarget.style.backgroundColor = "red";
           }}
           onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = "green";
+            e.currentTarget.style.backgroundColor = "var(--secondary)";
           }}
         >
           Entrar a la invitacion
