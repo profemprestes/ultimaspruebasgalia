@@ -46,8 +46,8 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
           className="proceed-button"
           style={{
             backgroundColor: "var(--secondary)",
-            color: "var(--secondary-foreground)",
-            border: "2px solid var(--accent)",
+            color: "var(--primary-foreground)",
+            border: "2px solid var(--primary)",
             borderRadius: "var(--radius-md)",
             padding: "10px 20px",
             fontSize: "1.1em",
