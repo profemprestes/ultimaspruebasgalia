@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import { LoadingScreen } from "@/components/invitation/LoadingScreen";
 import { IntroSection } from "@/components/invitation/IntroSection";
 import { HeroSection } from "@/components/invitation/HeroSection";
-import { CountdownTimer } from "@/components/invitation/CountdownTimer";
 import { DetailsSection } from "@/components/invitation/DetailsSection";
 import { MapLocation } from "@/components/invitation/MapLocation";
 import { RsvpForm } from "@/components/invitation/RsvpForm";
@@ -41,7 +40,6 @@ export default function Home() {
       ) : showInvitation ? (
         <>
           {isHydrated ? <HeroSection /> : null}
-          {isHydrated ? <CountdownTimer eventDate={CONSTANTS.eventDate} /> : null}
           {isHydrated ? <DetailsSection /> : null}
           {isHydrated ? <MapLocation /> : null}
           {isHydrated ? <RsvpForm /> : null}
