@@ -43,21 +43,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
         <Gallery />
         <Button
           onClick={onProceed}
-          className="proceed-button"
-          style={{
-            backgroundColor: "var(--secondary)",
-            color: "var(--primary-foreground)",
-            border: "2px solid var(--primary)",
-            borderRadius: "var(--radius-md)",
-            padding: "10px 20px",
-            fontSize: "1.1em",
-          }}
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = "red";
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = "var(--secondary)";
-          }}
+          className="proceed-button bg-green-500 text-white border-2 border-green-700 rounded-md hover:bg-red-500 px-5 py-2 text-lg font-semibold transition-colors duration-300"
         >
           Entrar a la invitacion
         </Button>
