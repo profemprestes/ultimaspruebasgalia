@@ -8,15 +8,15 @@ import "@/styles/gallery.css";
 export const Gallery: React.FC = () => {
   const images = [
     {
-      src: "https://picsum.photos/id/10/750/500",
+      src: "/galia1.webp",
       caption: "Galia at 1 month",
     },
     {
-      src: "https://picsum.photos/id/20/750/500",
+      src: "/galia1.webp",
       caption: "Galia at 3 months",
     },
     {
-      src: "https://picsum.photos/id/30/750/500",
+      src: "/galia1.webp",
       caption: "Galia at 6 months",
     },
   ];
