@@ -81,7 +81,7 @@ export const HeroSection: React.FC = () => {
         </CardContent>
       </Card>
       <div className="hero__scroll-indicator" onClick={scrollToDetails}>
-        <span>Desliza para ver más</span>
+        <span style={{color: '#555'}} >Desliza para ver más</span>
         <svg
           width="24"
           height="24"
@@ -92,6 +92,7 @@ export const HeroSection: React.FC = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
           className="hero__scroll-arrow"
+          style={{stroke: '#555'}}
         >
           <path d="M12 5v14M5 12l7 7 7-7" />
         </svg>
