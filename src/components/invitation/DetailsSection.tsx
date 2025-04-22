@@ -2,7 +2,7 @@
 
 import React from "react";
 import "@/styles/DetailsSection.css";
-import { ConfirmacionModal } from "@/components/invitation/ConfirmacionModal";
+import {ConfirmacionModal} from "@/components/invitation/ConfirmacionModal";
 
 export const DetailsSection: React.FC = () => {
   return (
