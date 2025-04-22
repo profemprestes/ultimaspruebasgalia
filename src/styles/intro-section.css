@@ -1,4 +1,5 @@
-.intro-section-component .intro-section {
+
+.intro-section {
   position: relative;
   display: flex;
   justify-content: center;
@@ -6,9 +7,10 @@
   min-height: 100vh;
   padding: 20px;
   overflow: hidden;
+  background: linear-gradient(to bottom, #a7d1ab, #ffeb3b);
 }
 
-.intro-section-component  .background-animation {
+.intro-section .background-animation {
   position: absolute;
   top: 0;
   left: 0;
@@ -18,49 +20,49 @@
   z-index: 1;
 }
 
-.intro-section-component  .daisy,
-.intro-section-component  .balloon {
+.intro-section .daisy,
+.intro-section .balloon {
   position: absolute;
   animation: float 15s linear infinite;
   opacity: 0.7;
 }
 
-.intro-section-component  .daisy {
-  width: 80px;
+.intro-section .daisy {
+  width: 50px; /* Smaller daisies */
   height: auto;
 }
 
-.intro-section-component  .balloon {
-  width: 100px;
+.intro-section .balloon {
+  width: 70px; /* Smaller balloons */
   height: auto;
 }
 
-.intro-section-component  .daisy-1 {
+.intro-section .daisy-1 {
+  top: 10%; /* Closer to the top */
+  left: 5%; /* Towards the left edge */
+}
+
+.intro-section .balloon-1 {
   top: 20%;
-  left: 10%;
-}
-
-.intro-section-component  .balloon-1 {
-  top: 30%;
-  right: 15%;
+  right: 5%;
   animation-delay: 2s;
 }
 
-.intro-section-component  .balloon-2 {
-  bottom: 20%;
-  left: 20%;
+.intro-section .balloon-2 {
+  bottom: 10%; /* Higher from the bottom */
+  left: 10%;
   animation-delay: 4s;
 }
 
-.intro-section-component  .balloon-3 {
-  bottom: 30%;
-  right: 10%;
+.intro-section .balloon-3 {
+  bottom: 20%;
+  right: 15%;
   animation-delay: 6s;
 }
 
-.intro-section-component  .daisy-2 {
-  top: 10%;
-  right: 5%;
+.intro-section .daisy-2 {
+  top: 5%;
+  right: 10%;
   animation-delay: 3s;
 }
 
@@ -69,14 +71,14 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-15px); /* Reduced float height */
   }
   100% {
     transform: translateY(0);
   }
 }
 
-.intro-section-component  .intro-content {
+.intro-section .intro-content {
   max-width: 750px;
   text-align: center;
   padding: 30px;
@@ -107,11 +109,11 @@
   }
 }
 
-.intro-section-component  .intro-header {
+.intro-section .intro-header {
   margin-bottom: 20px;
 }
 
-.intro-section-component  .intro-title {
+.intro-section .intro-title {
   font-size: 2.5rem;
   color: var(--color-heading);
   font-family: var(--font-heading);
@@ -119,7 +121,7 @@
   font-weight: normal;
 }
 
-.intro-section-component  .badge {
+.intro-section .badge {
   display: inline-block;
   padding: 8px 16px;
   background-color: var(--color-secondary);
@@ -131,20 +133,20 @@
   box-shadow: var(--shadow-sm);
 }
 
-.intro-section-component  .intro-description {
+.intro-section .intro-description {
   font-size: 1.2em;
   color: var(--color-text);
   margin-bottom: 30px;
   font-family: var(--font-body);
 }
 
-.intro-section-component  .proceed-button {
+.intro-section .proceed-button {
     padding: 12px 24px;
     font-size: 1.1em;
-    background-color: var(--secondary); /* Use secondary color */
-    color: var(--primary-foreground); /* Use secondary foreground color */
-    border: none;
-    border-radius: var(--radius-sm);
+    background-color: green;
+    color: white;
+    border: 2px solid var(--primary);
+    border-radius: var(--radius-md);
     cursor: pointer;
     transition: background-color var(--transition-fast);
     z-index: 3;
@@ -154,62 +156,61 @@
     font-weight: bold;
 }
 
-.intro-section-component  .proceed-button:hover {
-    background-color: hsl(var(--secondary) / 0.9);
-    color: var(--secondary-foreground);
+.intro-section .proceed-button:hover {
+    background-color: red;
 }
 
 @media (max-width: 768px) {
-  .intro-section-component  .intro-content {
+  .intro-section .intro-content {
     max-width: 90%;
     margin: 0 auto;
   }
 
-  .intro-section-component  .intro-title {
+  .intro-section .intro-title {
     font-size: 2em;
   }
 
-  .intro-section-component  .intro-description {
+  .intro-section .intro-description {
     font-size: 1em;
   }
 
-  .intro-section-component  .badge {
+  .intro-section .badge {
     font-size: 0.9em;
     padding: 6px 12px;
   }
 
-  .intro-section-component  .proceed-button {
+  .intro-section .proceed-button {
     font-size: 1em;
     padding: 10px 20px;
   }
 
-  .intro-section-component  .daisy,
-  .intro-section-component  .balloon {
+  .intro-section .daisy,
+  .intro-section .balloon {
     opacity: 0.5;
   }
 }
 
 @media (max-width: 480px) {
-  .intro-section-component  .intro-title {
+  .intro-section .intro-title {
     font-size: 1.7em;
   }
 
-  .intro-section-component  .intro-description {
+  .intro-section .intro-description {
     font-size: 0.9em;
   }
 
-  .intro-section-component  .badge {
+  .intro-section .badge {
     font-size: 0.8em;
     padding: 6px 12px;
   }
 
-  .intro-section-component  .proceed-button {
+  .intro-section .proceed-button {
     font-size: 0.9em;
     padding: 8px 16px;
   }
 
-  .intro-section-component  .daisy,
-  .intro-section-component  .balloon {
+  .intro-section .daisy,
+  .intro-section .balloon {
     width: 60px;
   }
 }

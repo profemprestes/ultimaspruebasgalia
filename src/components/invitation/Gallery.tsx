@@ -23,7 +23,7 @@ export const Gallery: React.FC<GalleryProps> = ({ images }) => {
   } = useGallery(images.length);
 
   return (
-    <div className="gallery-component gallery">
+    <div className="gallery-component">
       <div className="image-container">
         <img
           src={images[currentImageIndex].src}

@@ -30,7 +30,7 @@ const images = [
 
 export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
   return (
-    <div className="intro-section-component intro-section">
+    <div className="intro-section">
       <div className="background-animation">
         <img src="/img/daisy.png" alt="Daisy" className="daisy daisy-1" />
         <img
@@ -39,7 +39,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
           className="balloon balloon-1"
         />
         <img
-          src="/img/balloon3.svg"
+          src="/img/balloon2.jpg"
           alt="Balloon"
           className="balloon balloon-2"
         />
