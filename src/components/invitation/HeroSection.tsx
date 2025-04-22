@@ -58,11 +58,11 @@ export const HeroSection: React.FC = () => {
           <h2 className="hero__name">Soy Galia</h2>
           <div className="hero__event-details">
             <p>
-              <MapPinIcon className="hero__icon" />
+              <MapPinIcon className="hero__icon" stroke="var(--foreground)" />
               Club Ciclista Juanico
             </p>
             <p>
-              <CalendarIcon className="hero__icon" />
+              <CalendarIcon className="hero__icon" stroke="var(--foreground)" size={20}/>
               10 de Mayo de 2024 | 13:00
             </p>
           </div>
