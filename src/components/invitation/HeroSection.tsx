@@ -33,6 +33,13 @@ export const HeroSection: React.FC = () => {
     };
   }, []);
 
+  const scrollToDetails = () => {
+    const detailsSection = document.getElementById('details-section');
+    if (detailsSection) {
+      detailsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="hero">
       <div className="hero__background" ref={backgroundRef}>
@@ -56,7 +63,7 @@ export const HeroSection: React.FC = () => {
             </p>
             <p>
               <CalendarIcon className="hero__icon" />
-              10 de Mayo de 2024 | 13:00 - 18:00
+              10 de Mayo de 2024 | 13:00 
             </p>
           </div>
 
@@ -73,7 +80,7 @@ export const HeroSection: React.FC = () => {
           {/*<Button>Confirmar Asistencia</Button>*/}
         </CardContent>
       </Card>
-      <div className="hero__scroll-indicator">
+      <div className="hero__scroll-indicator" onClick={scrollToDetails}>
         <span>Desliza para ver más</span>
         <svg
           width="24"
@@ -92,4 +99,3 @@ export const HeroSection: React.FC = () => {
     </section>
   );
 };
-

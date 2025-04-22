@@ -7,7 +7,7 @@ import {ConfirmacionModal} from "@/components/invitation/ConfirmacionModal";
 export const DetailsSection: React.FC = () => {
   return (
     <>
-      <div className="principal-date-container">
+      <div className="principal-date-container" id="details-section">
         <div className="flower-decoration">
           <img src="/daisy.svg" className="flower-icon" alt="icono margarita" />
         </div>
@@ -63,4 +63,3 @@ export const DetailsSection: React.FC = () => {
     </>
   );
 };
-
