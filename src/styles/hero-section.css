@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #333;
+  color: var(--foreground); /* Use foreground color from globals.css */
   font-family: sans-serif;
 }
 
@@ -41,6 +41,7 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   max-width: 80%;
   margin-bottom: 4rem;
+  color: var(--foreground); /* Use foreground color from globals.css */
 }
 
 .hero__animated-image {
@@ -56,7 +57,7 @@
 }
 
 .hero__celebration-primer {
-  color: #e44d26;
+  color: var(--primary); /* Use primary color from globals.css */
 }
 
 .hero__name {
@@ -81,6 +82,7 @@
 .hero__icon {
   width: 1rem;
   height: 1rem;
+    stroke: var(--secondary); /* Use secondary color for icon from globals.css */
 }
 
 .hero__invitation-text {
@@ -98,13 +100,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #555;
+  color: var(--primary); /* Use primary color from globals.css */
+  cursor: pointer;
+}
+
+.hero__scroll-indicator span {
+    color: var(--primary); /* Ensuring the text color matches the arrow */
 }
 
 .hero__scroll-arrow {
   width: 2rem;
   height: 2rem;
-  stroke: #555;
+  stroke: var(--primary); /* Use primary color from globals.css */
   animation: bounce 1.5s infinite;
 }
 
@@ -135,11 +142,12 @@
   font-weight: bold;
   display: block; /* Ensure it takes full width */
   margin-bottom: 5px; /* Add space below the number */
+    color: var(--foreground);
 }
 
 .countdown-timer > div p {
   font-size: 0.8rem;
-  color: #555; /* Adjust label color to be more subtle */
+  color: var(--secondary); /* Adjust label color to be more subtle */
 }
 
 @keyframes bounce {
