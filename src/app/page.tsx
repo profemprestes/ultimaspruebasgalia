@@ -10,6 +10,7 @@ import { RsvpForm } from "@/components/invitation/RsvpForm";
 import { ThankYouGenerator } from "@/components/invitation/ThankYouGenerator";
 import { CONSTANTS } from "@/lib/constants";
 import { useHydration } from "@/hooks/use-hydration";
+import PartySection from "@/components/invitation/PartySection";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,9 +42,11 @@ export default function Home() {
         <>
           {isHydrated ? <HeroSection /> : null}
           {isHydrated ? <DetailsSection /> : null}
+		      {isHydrated ? <PartySection /> : null}
         </>
       ) : null}
     </div>
   );
 }
+
 
