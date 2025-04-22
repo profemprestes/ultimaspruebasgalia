@@ -14,8 +14,8 @@ interface ThemeProviderProps {
 const ThemeProvider = ({
   children,
   attribute = "class",
-  defaultTheme = "system",
-  enableSystem = true,
+  defaultTheme = "light", // Force light theme
+  enableSystem = false, // Disable system theme detection
   storageKey = "theme",
 }: ThemeProviderProps) => {
   const [mounted, setMounted] = React.useState(false);
