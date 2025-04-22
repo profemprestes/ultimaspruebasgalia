@@ -99,8 +99,8 @@ export const LoadingScreen: React.FC = () => {
             className="loader-image"
           />
         </div>
-        <h1 className="loader-title">Galia's</h1>
-        <h2 className="loader-subtitle">Loading Invitation</h2>
+        <h1 className="loader-title">Cumple Galia</h1>
+        <h2 className="loader-subtitle">Cargando Invitacion</h2>
         <div className="loader-progress-container">
           <div className="loader-progress">
             <div
