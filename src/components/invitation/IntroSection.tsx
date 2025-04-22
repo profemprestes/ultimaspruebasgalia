@@ -12,6 +12,33 @@ interface IntroSectionProps {
 export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
   return (
     <div className="intro-section">
+      <div className="background-animation">
+        <img
+          src="/img/daisy.png"
+          alt="Daisy"
+          className="daisy daisy-1"
+        />
+        <img
+          src="/img/balloon2.jpg"
+          alt="Balloon"
+          className="balloon balloon-1"
+        />
+        <img
+          src="/img/balloon3.svg"
+          alt="Balloon"
+          className="balloon balloon-2"
+        />
+        <img
+          src="/img/balloon1.svg"
+          alt="Balloon"
+          className="balloon balloon-3"
+        />
+        <img
+          src="/img/daisy.png"
+          alt="Daisy"
+          className="daisy daisy-2"
+        />
+      </div>
       <div className="intro-content">
         <header className="intro-header">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">¡Celebra conmigo!</h1>
@@ -29,3 +56,4 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
     </div>
   );
 };
+
