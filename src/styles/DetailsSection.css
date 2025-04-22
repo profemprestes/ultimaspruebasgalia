@@ -2,6 +2,8 @@
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+  background: linear-gradient(135deg, #A7D1AB, #FFEB3B); /* Gradient background */
+  border-radius: 15px;
 }
 
 .flower-decoration {
@@ -21,7 +23,7 @@
 
 .birthday-title {
   font-size: 24px;
-  color: var(--primary);
+  color: var(--primary-foreground); /* Use primary foreground for better contrast */
 }
 
 .info-grid {
@@ -31,9 +33,9 @@
 }
 
 .info-card {
-  background-color: var(--card);
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow for emphasis */
   transition: transform 0.3s ease-in-out;
 }
 
@@ -70,6 +72,7 @@
   color: var(--primary-foreground);
   background-color: var(--primary);
   transition: background-color 0.3s ease;
+  border: none; /* Remove default border */
 }
 
 .action-button:hover {
@@ -105,4 +108,3 @@
     font-size: 16px; /* Adjust font size for smaller screens */
   }
 }
-

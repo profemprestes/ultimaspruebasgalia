@@ -54,9 +54,7 @@ export const DetailsSection: React.FC = () => {
               <p className="info-label">Confirma asistencia</p>
               <span className="info-value"> Me gustaría que confirmes tu asistencia </span>
               <div className="modal-wrapper">
-                <ConfirmacionModal onConfirm={(name, quantity) => {
-                   console.log(`Confirmado: Nombre: ${name}, Cantidad: ${quantity}`);
-                }} />
+                <ConfirmacionModal />
               </div>
             </div>
           </div>
