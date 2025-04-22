@@ -41,7 +41,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
       </div>
       <div className="intro-content">
         <header className="intro-header">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">¡Celebra conmigo!</h1>
+          <h1 className="intro-title">¡Celebra conmigo!</h1>
           <div className="badge">1 añito</div>
         </header>
         <p className="intro-description">
@@ -56,3 +56,4 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
     </div>
   );
 };
+
