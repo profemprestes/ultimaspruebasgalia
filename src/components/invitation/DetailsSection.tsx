@@ -63,3 +63,4 @@ export const DetailsSection: React.FC = () => {
     </>
   );
 };
+

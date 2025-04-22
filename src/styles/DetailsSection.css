@@ -113,3 +113,10 @@
     font-size: 16px; /* Adjust font size for smaller screens */
   }
 }
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .info-value {
+    font-size: 1rem; /* Further reduce font size */
+  }
+}
