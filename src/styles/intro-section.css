@@ -1,0 +1,54 @@
+.intro-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.intro-content {
+  max-width: 750px;
+  text-align: center;
+}
+
+.intro-header {
+  margin-bottom: 20px;
+}
+
+.intro-header h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ffeb3b;
+  color: #333;
+  border-radius: 20px;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.intro-description {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.proceed-button {
+  padding: 12px 24px;
+  font-size: 1.1em;
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.proceed-button:hover {
+  background-color: #006666;
+}
+/
