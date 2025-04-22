@@ -39,4 +39,3 @@ export const Confetti: React.FC = () => {
     </div>
   );
 };
-/
