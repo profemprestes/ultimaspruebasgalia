@@ -23,7 +23,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
         </p>
         <Gallery />
         <Button onClick={onProceed} className="proceed-button">
-          Proceed to Invitation
+          Entrar a la invitacion
         </Button>
       </div>
     </div>

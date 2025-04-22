@@ -8,16 +8,20 @@ import "@/styles/gallery.css";
 export const Gallery: React.FC = () => {
   const images = [
     {
-      src: "/galia1.webp",
-      caption: "Galia at 1 month",
+      src: "/galia4.webp",
+      caption: "Mi primer añito",
     },
     {
-      src: "/galia1.webp",
-      caption: "Galia at 3 months",
+      src: "/galia/galiamaurogimeplaya.webp",
+      caption: "Momentos especiales",
     },
     {
-      src: "/galia1.webp",
-      caption: "Galia at 6 months",
+      src: "/galia/galiarisa.webp",
+      caption: "Sonrisas de Galia",
+    },
+    {
+      src: "/galia/galiahamaca.webp",
+      caption: "Celebrando juntos",
     },
   ];
 
