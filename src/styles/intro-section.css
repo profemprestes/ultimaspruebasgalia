@@ -52,3 +52,48 @@
 .proceed-button:hover {
   background-color: #006666;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .intro-content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .intro-header h1 {
+    font-size: 2em;
+  }
+
+  .intro-description {
+    font-size: 1em;
+  }
+
+  .badge {
+    font-size: 0.9em;
+  }
+
+  .proceed-button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-header h1 {
+    font-size: 1.7em;
+  }
+
+  .intro-description {
+    font-size: 0.9em;
+  }
+
+  .badge {
+    font-size: 0.8em;
+    padding: 6px 12px;
+  }
+
+  .proceed-button {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+}
