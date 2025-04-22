@@ -1,6 +1,18 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
+const confettiColors = [
+  "#fce18a",
+  "#ff726d",
+  "#b48bce",
+  "#f4306d",
+  "#5bca94",
+];
+
+const getRandomColor = () => {
+  return confettiColors[Math.floor(Math.random() * confettiColors.length)];
+};
+
 export const Confetti: React.FC = () => {
   const numberOfConfetti = 50;
   const confettiRef = useRef<HTMLDivElement[]>([]);
@@ -18,6 +30,7 @@ export const Confetti: React.FC = () => {
         const delay = Math.random() * 10;
         const duration = Math.random() * 5 + 5;
         const rotation = Math.random() * 360;
+        const color = getRandomColor();
 
         confetti.className = "confetti";
         confetti.style.width = `${size}px`;
@@ -26,6 +39,7 @@ export const Confetti: React.FC = () => {
         confetti.style.animationDelay = `${delay}s`;
         confetti.style.animationDuration = `${duration}s`;
         confetti.style.transform = `rotate(${rotation}deg)`;
+        confetti.style.backgroundColor = color; // Set background color
         container.appendChild(confetti);
       });
     }
