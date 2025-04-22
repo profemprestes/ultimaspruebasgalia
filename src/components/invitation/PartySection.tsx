@@ -2,6 +2,7 @@
 
 import React from 'react';
 import '@/styles/PartySection.css';
+import Sobremimodal from '@/components/invitation/Sobremimodal';
 
 const PartySection: React.FC = () => {
   return (
@@ -19,8 +20,10 @@ const PartySection: React.FC = () => {
       <div className="party-content">
         <div className="party-cards-container">
           {/* CardParty components will go here */}
-          <div>Card 1: Envíame un Mensaje</div>
-          <div>Card 2: Datos Sobre Mí</div>
+          <div>Envíame un Mensaje</div>
+          <div>
+            <Sobremimodal buttonText="Datos Sobre Mí" buttonClassName="about-button" />
+          </div>
         </div>
       </div>
     </div>
@@ -28,3 +31,4 @@ const PartySection: React.FC = () => {
 };
 
 export default PartySection;
+
