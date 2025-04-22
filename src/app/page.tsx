@@ -41,9 +41,6 @@ export default function Home() {
         <>
           {isHydrated ? <HeroSection /> : null}
           {isHydrated ? <DetailsSection /> : null}
-          {isHydrated ? <MapLocation /> : null}
-          {isHydrated ? <RsvpForm /> : null}
-          {isHydrated ? <ThankYouGenerator /> : null}
         </>
       ) : null}
     </div>
