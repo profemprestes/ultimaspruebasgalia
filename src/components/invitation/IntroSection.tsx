@@ -49,7 +49,19 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
           especial contigo
         </p>
         <Gallery />
-        <Button onClick={onProceed} className="proceed-button">
+        <Button
+          onClick={onProceed}
+          className="proceed-button"
+          style={{
+            backgroundColor: "green",
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.backgroundColor = "red";
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.backgroundColor = "green";
+          }}
+        >
           Entrar a la invitacion
         </Button>
       </div>
