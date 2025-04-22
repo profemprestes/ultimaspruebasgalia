@@ -227,3 +227,11 @@
     width: 60px;
   }
 }
+
+.dark .intro-section .intro-content {
+  color: var(--muted-foreground); /* Adjust text color for dark mode */
+}
+
+.dark .intro-section .intro-description {
+  color: var(--muted-foreground); /* Darker description color for dark mode */
+}
