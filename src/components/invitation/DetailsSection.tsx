@@ -2,7 +2,6 @@
 
 import React from "react";
 import "@/styles/DetailsSection.css";
-import {AsistenciaModal} from "@/components/ui/asistencia-modal";
 
 export const DetailsSection: React.FC = () => {
   return (
@@ -53,7 +52,6 @@ export const DetailsSection: React.FC = () => {
             <p className="info-label">Confirma asistencia</p>
             <span className="info-value"> Me gustaría que confirmes tu asistencia </span>
             <div className="modal-wrapper">
-              <AsistenciaModal type="cumpleaños" />
             </div>
           </div>
         </div>
@@ -61,4 +59,5 @@ export const DetailsSection: React.FC = () => {
     </div>
   );
 };
+
 
