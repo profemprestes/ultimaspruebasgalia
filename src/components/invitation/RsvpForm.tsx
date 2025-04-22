@@ -25,4 +25,3 @@ export const RsvpForm: React.FC = () => {
     </div>
   );
 };
-/

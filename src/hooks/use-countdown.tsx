@@ -35,4 +35,3 @@ export const useCountdown = (eventDate: Date) => {
 
   return { days, hours, minutes, seconds };
 };
-/

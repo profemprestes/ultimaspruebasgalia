@@ -10,4 +10,3 @@ export const MapLocation: React.FC = () => {
     </div>
   );
 };
-/

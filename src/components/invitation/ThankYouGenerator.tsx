@@ -10,4 +10,3 @@ export const ThankYouGenerator: React.FC = () => {
     </div>
   );
 };
-/
