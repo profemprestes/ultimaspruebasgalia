@@ -3,8 +3,42 @@ import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Galia\'s First Birthday!',
-  description: 'Celebrate Galia\'s first adventure with us!',
+  title: '¡Primer Cumpleaños de Galia!',
+  description: 'Acompáñanos a celebrar el primer año de aventuras de Galia. ¡RSVP aquí!',
+  // Add more SEO-related metadata
+  keywords: ['Galia', 'Cumpleaños', 'Fiesta', 'Celebración', 'Primer Año', 'Evento'],
+  openGraph: {
+    title: '¡Primer Cumpleaños de Galia!',
+    description: 'Acompáñanos a celebrar el primer año de aventuras de Galia. ¡RSVP aquí!',
+    url: 'https://tu-sitio-web.com', // Replace with your actual URL
+    siteName: 'Galia\'s Birthday',
+    images: [
+      {
+        url: 'https://tu-sitio-web.com/images/galias-birthday.jpg', // Replace with an actual image URL
+        width: 1200,
+        height: 630,
+        alt: 'Galia\'s First Birthday Celebration',
+      },
+    ],
+    locale: 'es_ES',
+    type: 'website',
+  },
+  // Twitter Card metadata
+  twitter: {
+    card: 'summary_large_image',
+    title: '¡Primer Cumpleaños de Galia!',
+    description: 'Acompáñanos a celebrar el primer año de aventuras de Galia. ¡RSVP aquí!',
+    images: ['https://tu-sitio-web.com/images/galias-birthday.jpg'], // Replace with an actual image URL
+    creator: '@tu_usuario', // Replace with your Twitter handle
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 const geistSans = Geist({
@@ -26,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
     <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <ClientOnly>
         <ThemeProvider>
@@ -37,3 +71,4 @@ export default function RootLayout({
     </html>
   );
 }
+
