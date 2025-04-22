@@ -140,24 +140,24 @@
 }
 
 .proceed-button {
-  padding: 12px 24px;
-  font-size: 1.1em;
-  background-color: var(--color-primary);
-  color: white;
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: background-color var(--transition-fast);
-  z-index: 3;
-  position: relative;
-  box-shadow: var(--shadow-sm);
-  font-family: var(--font-body);
-  font-weight: bold;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    background-color: var(--secondary); /* Use secondary color */
+    color: var(--secondary-foreground); /* Use secondary foreground color */
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    z-index: 3;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-body);
+    font-weight: bold;
 }
 
 .proceed-button:hover {
-  background-color: var(--color-accent);
-  color: white;
+    background-color: hsl(var(--secondary) / 0.9);
+    color: var(--secondary-foreground);
 }
 
 @media (max-width: 768px) {
