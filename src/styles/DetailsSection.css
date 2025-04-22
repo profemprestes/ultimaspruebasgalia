@@ -1,8 +1,9 @@
+
 .principal-date-container {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  background: linear-gradient(135deg, #A7D1AB, #FFEB3B); /* Gradient background */
+  background: linear-gradient(135deg, var(--chart-2), var(--chart-5)); /* Gradient background */
   border-radius: 15px;
 }
 
@@ -23,7 +24,7 @@
 
 .birthday-title {
   font-size: 24px;
-  color: var(--primary-foreground); /* Use primary foreground for better contrast */
+  color: var(--foreground); /* Use primary foreground for better contrast */
 }
 
 .info-grid {
@@ -33,7 +34,7 @@
 }
 
 .info-card {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  background-color: var(--card); /* Semi-transparent white background */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow for emphasis */
   transition: transform 0.3s ease-in-out;
@@ -49,17 +50,21 @@
 }
 
 .info-label {
-  font-size: 16px;
-  color: var(--muted-foreground);
+  font-size: 1.2rem; /* Increased font size */
+  font-weight: bold; /* Make it bold */
+  color: var(--foreground); /* Use a darker color */
   margin-bottom: 10px;
   display: block;
+  text-transform: uppercase; /* Make it uppercase */
+  letter-spacing: 1px; /* Add letter spacing */
 }
 
 .info-value {
-  font-size: 18px;
-  color: var(--foreground);
+  font-size: 1rem; /* Slightly reduced font size */
+  color: var(--muted-foreground); /* Use a muted color */
   display: block;
   margin-bottom: 20px;
+  line-height: 1.4; /* Improve readability */
 }
 
 .action-button {
