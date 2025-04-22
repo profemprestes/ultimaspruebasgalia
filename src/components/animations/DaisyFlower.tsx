@@ -1,15 +1,21 @@
 "use client";
 import React from "react";
 
-export const DaisyFlower: React.FC<{ className?: string }> = ({
-  className,
-}) => {
+interface DaisyFlowerProps {
+  className?: string;
+}
+
+export const DaisyFlower: React.FC<DaisyFlowerProps> = ({ className }) => {
   return (
     <img
       className={className}
       src="/margarita.gif"
       alt="Daisy Flower"
-      style={{ width: '100px', height: '100px' }} // Adjust size as needed
+      style={{
+        width: "100px",
+        height: "100px",
+        objectFit: "contain", // Added objectFit to maintain aspect ratio
+      }}
     />
   );
 };
