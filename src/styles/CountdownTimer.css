@@ -1,15 +1,18 @@
 .countdown-timer {
   display: flex;
   justify-content: space-around;
+  align-items: center; /* Align items vertically */
   margin-top: 20px;
   padding: 10px;
   border-radius: 8px;
+  width: 100%; /* Make the timer occupy full width */
 }
 
 .countdown-timer > div {
   text-align: center;
   padding: 10px;
   border-radius: 5px;
+  flex: 1; /* Distribute space evenly */
 }
 
 .countdown-timer > div span {
@@ -54,4 +57,34 @@
 .countdown-number span.current {
   transform: translateY(0);
   opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .countdown-timer {
+    flex-direction: row; /* Stack elements vertically on smaller screens */
+  }
+
+  .countdown-timer > div {
+    margin-bottom: 5px; /* Add spacing between timer elements */
+  }
+
+  .countdown-timer > div span {
+    font-size: 1.2rem; /* Reduce font size for numbers */
+  }
+
+  .countdown-timer > div p {
+    font-size: 0.7rem; /* Reduce font size for labels */
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .countdown-timer > div span {
+    font-size: 1rem; /* Further reduce font size for numbers */
+  }
+
+  .countdown-timer > div p {
+    font-size: 0.6rem; /* Further reduce font size for labels */
+  }
 }

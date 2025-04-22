@@ -61,10 +61,10 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Conditionally render either the countdown timer or the event in progress message */}
-          {eventInProgress ? (
-            <p className="hero__event-in-progress">¡El evento está en curso!</p>
-          ) : (
+          {!eventInProgress ? (
             <CountdownTimer eventDate={CONSTANTS.eventDate} />
+          ) : (
+            <p className="hero__event-in-progress">¡El evento está en curso!</p>
           )}
 
           <p className="hero__invitation-text">
