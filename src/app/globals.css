@@ -1,8 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
 
 body {
   font-family: 'Baloo 2', Arial, Helvetica, sans-serif;
@@ -89,4 +90,5 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
 
