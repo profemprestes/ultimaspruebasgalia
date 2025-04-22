@@ -34,7 +34,9 @@ export const Confetti: React.FC = () => {
       const container = document.querySelector(".confetti-container");
       if (container) {
         confettiRef.current.forEach(confetti => {
-          container.removeChild(confetti);
+          if (container.contains(confetti)) {
+            container.removeChild(confetti);
+          }
         });
       }
     };
