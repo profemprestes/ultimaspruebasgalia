@@ -1,4 +1,4 @@
-.gallery {
+.gallery-component .gallery {
   width: 100%;
   max-width: 600px;
   margin: 20px auto;
@@ -6,11 +6,11 @@
   overflow: hidden;
 }
 
-.image-container {
+.gallery-component  .image-container {
   position: relative;
 }
 
-.gallery-image {
+.gallery-component  .gallery-image {
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -18,7 +18,7 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-.image-caption {
+.gallery-component  .image-caption {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -31,7 +31,7 @@
   border-bottom-right-radius: 8px;
 }
 
-.navigation-buttons {
+.gallery-component  .navigation-buttons {
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -42,7 +42,7 @@
   padding: 0 10px;
 }
 
-.nav-button {
+.gallery-component  .nav-button {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   border: none;
@@ -56,17 +56,17 @@
   transition: background-color 0.3s;
 }
 
-.nav-button:hover {
+.gallery-component  .nav-button:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.navigation-dots {
+.gallery-component  .navigation-dots {
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
 
-.dot {
+.gallery-component  .dot {
   width: 10px;
   height: 10px;
   background-color: #ddd;
@@ -77,10 +77,10 @@
   transition: background-color 0.3s;
 }
 
-.dot.active {
+.gallery-component  .dot.active {
   background-color: #333;
 }
 
-.dot:hover {
+.gallery-component  .dot:hover {
   background-color: #888;
 }

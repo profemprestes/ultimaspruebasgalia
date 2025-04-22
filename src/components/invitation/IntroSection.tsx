@@ -9,9 +9,28 @@ interface IntroSectionProps {
   onProceed: () => void;
 }
 
+const images = [
+  {
+    src: "/galia/galiabebe.webp",
+    caption: "Mi primer añito",
+  },
+  {
+    src: "/galia/galiahamaca.webp",
+    caption: "Momentos especiales",
+  },
+  {
+    src: "/galia/galiamaurogime.webp",
+    caption: "Sonrisas de Galia",
+  },
+  {
+    src: "/galia/galiamaurogimeauto.webp",
+    caption: "Celebrando juntos",
+  },
+];
+
 export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
   return (
-    <div className="intro-section">
+    <div className="intro-section-component intro-section">
       <div className="background-animation">
         <img src="/img/daisy.png" alt="Daisy" className="daisy daisy-1" />
         <img
@@ -40,10 +59,10 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
           Galia está cumpliendo su primer añito y quiere compartir este día tan
           especial contigo
         </p>
-        <Gallery />
+        <Gallery images={images} />
         <Button
           onClick={onProceed}
-          className="proceed-button bg-green-500 text-white border-2 border-green-700 rounded-md hover:bg-red-500 px-5 py-2 text-lg font-semibold transition-colors duration-300"
+          className="proceed-button"
         >
           Entrar a la invitacion
         </Button>
@@ -51,4 +70,3 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
     </div>
   );
 };
-

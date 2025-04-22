@@ -5,26 +5,16 @@ import { useGallery } from "@/hooks/use-gallery";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "@/styles/gallery.css";
 
-export const Gallery: React.FC = () => {
-  const images = [
-    {
-      src: "/galia4.webp",
-      caption: "Mi primer añito",
-    },
-    {
-      src: "/galia/galiamaurogimeplaya.webp",
-      caption: "Momentos especiales",
-    },
-    {
-      src: "/galia/galiarisa.webp",
-      caption: "Sonrisas de Galia",
-    },
-    {
-      src: "/galia/galiahamaca.webp",
-      caption: "Celebrando juntos",
-    },
-  ];
+interface GalleryImage {
+  src: string;
+  caption: string;
+}
 
+interface GalleryProps {
+  images: GalleryImage[];
+}
+
+export const Gallery: React.FC<GalleryProps> = ({ images }) => {
   const {
     currentImageIndex,
     goToPreviousImage,
@@ -33,7 +23,7 @@ export const Gallery: React.FC = () => {
   } = useGallery(images.length);
 
   return (
-    <div className="gallery">
+    <div className="gallery-component gallery">
       <div className="image-container">
         <img
           src={images[currentImageIndex].src}
