@@ -1,70 +1,364 @@
 /* src/styles/PartySection.css */
 
-.party-container {
-  width: 100%;
-  padding: 40px 20px;
-  box-sizing: border-box;
-  background-color: #f9f4ef;
-  color: #333;
-  text-align: center;
+.party-section {
+  padding: 5rem 1rem;
+  position: relative;
+  background: linear-gradient(to bottom, #fff9f9, #fff); /* Soft background gradient */
+  overflow: hidden;
 }
 
+.party-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Background decorations (balloons, confetti) */
+.party-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.decoration {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.2; /* Subtle opacity */
+}
+
+.balloon-left {
+  top: 10%;
+  left: 5%;
+  width: 120px;
+  height: 120px;
+  background-image: url(/img/balloon1.svg);
+  animation: float 8s ease-in-out infinite;
+}
+
+.balloon-right {
+  top: 15%;
+  right: 5%;
+  width: 100px;
+  height: 100px;
+  background-image: url(/img/balloon1.svg);
+  animation: float 7s ease-in-out infinite 1s;
+}
+
+.confetti-1 {
+  bottom: 15%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  background-image: url(/cake.svg);
+  animation: float 6s ease-in-out infinite 0.5s;
+}
+
+.confetti-2 {
+  bottom: 20%;
+  right: 10%;
+  width: 90px;
+  height: 90px;
+  background-image: url(/cake.svg);
+  animation: float 9s ease-in-out infinite 1.5s;
+}
+
+/* Header section */
 .party-header {
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeIn 1s ease-out;
 }
 
 .party-title-wrapper {
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
 }
 
 .party-title-wrapper h2 {
-  font-family: 'Parisienne', cursive;
-  color: #e44d26;
+  font-family: Parisienne, cursive;
   font-size: 4rem;
+  color: #ff6b8b; /* Soft pink for titles */
   margin-bottom: 0.5rem;
 }
 
-.party-subtitle {
-  font-size: 1.2rem;
-  font-style: italic;
+.party-title-wrapper:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff6b8b, transparent);
 }
 
+.party-subtitle {
+  font-size: 1.25rem;
+  color: #8a8a89; /* Gray for subtitles */
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Content & Cards */
 .party-content {
-  margin-top: 30px;
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+  opacity: 0;
 }
 
 .party-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* Responsive Styles */
+.party-card {
+  background-color: #fffc; /* Frosted glass effect */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px #00000014;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 148, 148, 0.2); /* Light border */
+  height: 100%;
+}
+
+.party-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #ff6b8b, #ffd166);
+}
+
+.party-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px #0000001f;
+}
+
+.party-card-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.party-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  transition: transform 0.5s ease;
+}
+
+.party-card:hover .party-card-icon img {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.party-card-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ff6b8b; /* Pink title */
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.party-card-title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: #ff6b8b4d;
+  transition: width 0.3s ease;
+}
+
+.party-card:hover .party-card-title:after {
+  width: 80px;
+}
+
+.party-card-description {
+  text-align: center;
+  color: #6f6f6e; /* Gray description text */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.custom-modal-button {
+  background-color: #ff6b8b; /* Pink buttons */
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px #ff6b8b4d;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-modal-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.8s ease;
+}
+
+.custom-modal-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px #ff6b8b66;
+  background-color: #ff5277;
+}
+
+.custom-modal-button:hover:before {
+  left: 100%;
+}
+
+.custom-modal-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px #ff6b8b4d;
+}
+
+/* Specific button styles */
+.message-button {
+  background-color: #ff6b8b;
+}
+
+.message-button:hover {
+  background-color: #ff5277;
+}
+
+.about-button {
+  background-color: #ffb347;
+}
+
+.about-button:hover {
+  background-color: #ffa726;
+  box-shadow: 0 8px 20px #ffb34766;
+}
+
+/* Animation keyframes */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  to {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .party-container {
-    padding: 30px 15px;
+  .party-card {
+    padding: 1.75rem;
   }
 
-  .party-title-wrapper h2 {
-    font-size: 3rem;
+  .party-card-title {
+    font-size: 1.5rem;
   }
 
-  .party-subtitle {
-    font-size: 1rem;
+  .party-card-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .custom-modal-button {
+    padding: 0.7rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .party-container {
-    padding: 20px 10px;
+  .party-card {
+    padding: 1.5rem;
   }
 
-  .party-title-wrapper h2 {
-    font-size: 2.5rem;
+  .party-card-title {
+    font-size: 1.35rem;
   }
 
-  .party-subtitle {
-    font-size: 0.9rem;
+  .party-card-description {
+    font-size: 0.95rem;
+  }
+
+  .party-card-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.25rem;
+  }
+
+  .custom-modal-button {
+    padding: 0.6rem 1.3rem;
+    font-size: 0.95rem;
   }
 }
+
+/* Base styles */
+/* Colors and fonts */
+/* Animation and transitions */
+/* Responsive adjustments */
