@@ -1,1 +1,1 @@
-import '@/ai/flows/thank-you-message-generator.ts';
+import '@/ai/flows/thank-you-message.ts';

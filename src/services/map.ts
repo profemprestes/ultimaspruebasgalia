@@ -13,12 +13,12 @@ export interface Location {
 }
 
 /**
- * Asynchronously retrieves map information for a given location.
+ * Asynchronously retrieves a URL to display a map for a given location.
  *
- * @param location The location to center the map on.
- * @returns A promise that resolves to a URL of a static map image.
+ * @param location The location to display on the map.
+ * @returns A promise that resolves to a URL string pointing to the map image.
  */
 export async function getMapUrl(location: Location): Promise<string> {
   // TODO: Implement this by calling an API.
-  return 'https://via.placeholder.com/400x300?text=Map';
+  return 'https://example.com/map';
 }

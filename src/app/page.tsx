@@ -1,77 +1,54 @@
-'use client';
+"use client";
 
-import React, {useState, useEffect} from 'react';
-import {AnimatedLoadingScreen} from '@/components/AnimatedLoadingScreen';
-import {IntroductionPage} from '@/components/IntroductionPage';
-import {InvitationDisplay} from '@/components/InvitationDisplay';
-import {InteractiveMap} from '@/components/InteractiveMap';
-import {RSVPForm} from '@/components/RSVPForm';
-import {Toaster} from '@/components/ui/toaster';
-import {useToast} from '@/hooks/use-toast';
-import {Button} from '@/components/ui/button';
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-
-const images = [
-  'https://picsum.photos/id/1018/1024/768',
-  'https://picsum.photos/id/1015/1024/768',
-  'https://picsum.photos/id/1019/1024/768',
-  'https://picsum.photos/id/1020/1024/768',
-];
-
-const invitationDetails = {
-  date: 'October 26, 2024',
-  time: '2:00 PM',
-  location: {
-    name: 'Celebration Gardens',
-    address: '123 Main St, Anytown, USA',
-    coordinates: {lat: 34.0522, lng: -118.2437},
-  },
-  rsvpEmail: 'rsvp@example.com',
-};
+import React, { useState, useEffect } from "react";
+import { LoadingScreen } from "@/components/invitation/LoadingScreen";
+import { IntroSection } from "@/components/invitation/IntroSection";
+import { HeroSection } from "@/components/invitation/HeroSection";
+import { CountdownTimer } from "@/components/invitation/CountdownTimer";
+import { DetailsSection } from "@/components/invitation/DetailsSection";
+import { MapLocation } from "@/components/invitation/MapLocation";
+import { RsvpForm } from "@/components/invitation/RsvpForm";
+import { ThankYouGenerator } from "@/components/invitation/ThankYouGenerator";
+import { CONSTANTS } from "@/lib/constants";
+import { useHydration } from "@/hooks/use-hydration";
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-  const [showIntroduction, setShowIntroduction] = useState(false);
-  const [introductionDone, setIntroductionDone] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showIntro, setShowIntro] = useState(false);
+  const [showInvitation, setShowInvitation] = useState(false);
+  const isHydrated = useHydration();
 
   useEffect(() => {
-    if (loading) {
-      setTimeout(() => {
-        setLoading(false);
-        setShowIntroduction(true);
-      }, 3000);
-    }
-  }, [loading]);
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setShowIntro(true);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
-  const handleIntroductionComplete = () => {
-    setIntroductionDone(true);
-    setShowIntroduction(false);
+  const handleProceedToInvitation = () => {
+    setShowIntro(false);
+    setShowInvitation(true);
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-24">
-      <Toaster />
-      {loading ? (
-        <AnimatedLoadingScreen />
-      ) : showIntroduction ? (
-        <IntroductionPage images={images} onComplete={handleIntroductionComplete} />
-      ) : (
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      {isLoading ? (
+        <LoadingScreen />
+      ) : showIntro ? (
+        <IntroSection onProceed={handleProceedToInvitation} />
+      ) : showInvitation ? (
         <>
-          <InvitationDisplay invitationDetails={invitationDetails} />
-          <InteractiveMap location={invitationDetails.location.coordinates} />
-          <RSVPForm rsvpEmail={invitationDetails.rsvpEmail} />
+          {isHydrated ? <HeroSection /> : null}
+          {isHydrated ? <CountdownTimer eventDate={CONSTANTS.eventDate} /> : null}
+          {isHydrated ? <DetailsSection /> : null}
+          {isHydrated ? <MapLocation /> : null}
+          {isHydrated ? <RsvpForm /> : null}
+          {isHydrated ? <ThankYouGenerator /> : null}
         </>
-      )}
-    </main>
+      ) : null}
+    </div>
   );
 }
+
