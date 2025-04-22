@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -11,9 +11,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from '@/components/ui/alert-dialog';
+import {Input} from '@/components/ui/input';
+import {Label} from '@/components/ui/label';
+import {Button} from '@/components/ui/button';
 
 interface ConfirmacionModalProps {
   onConfirm: (name: string, quantity: number) => void;
@@ -21,7 +22,7 @@ interface ConfirmacionModalProps {
 
 const whatsappNumber = '+59892475455';
 
-export const ConfirmacionModal: React.FC<ConfirmacionModalProps> = ({ onConfirm }) => {
+export const ConfirmacionModal: React.FC<ConfirmacionModalProps> = ({onConfirm}) => {
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState<number>(1);
 
@@ -35,15 +36,17 @@ export const ConfirmacionModal: React.FC<ConfirmacionModalProps> = ({ onConfirm 
     return `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   };
 
-
   return (
     <AlertDialog>
-      <AlertDialogTrigger>Confirma asistencia</AlertDialogTrigger>
+      <AlertDialogTrigger asChild>
+        <Button variant="outline">Confirma asistencia</Button>
+      </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Confirma tu asistencia</AlertDialogTitle>
           <AlertDialogDescription>
-            Por favor, ingresa tu nombre y la cantidad de personas que asistirán al cumpleaños de Galia.
+            Por favor, ingresa tu nombre y la cantidad de personas que asistirán
+            al cumpleaños de Galia.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <div className="grid gap-4 py-4">
@@ -55,7 +58,7 @@ export const ConfirmacionModal: React.FC<ConfirmacionModalProps> = ({ onConfirm 
               type="text"
               id="name"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={e => setName(e.target.value)}
               className="col-span-3"
             />
           </div>
@@ -67,7 +70,7 @@ export const ConfirmacionModal: React.FC<ConfirmacionModalProps> = ({ onConfirm 
               type="number"
               id="quantity"
               value={quantity.toString()}
-              onChange={(e) => setQuantity(parseInt(e.target.value))}
+              onChange={e => setQuantity(parseInt(e.target.value))}
               className="col-span-3"
               min="1"
             />
@@ -76,7 +79,7 @@ export const ConfirmacionModal: React.FC<ConfirmacionModalProps> = ({ onConfirm 
         <AlertDialogFooter>
           <AlertDialogCancel>Cancelar</AlertDialogCancel>
           <AlertDialogAction asChild>
-             <a
+            <a
               href={generateWhatsAppMessage()}
               target="_blank"
               rel="noopener noreferrer"
