@@ -10,11 +10,13 @@ import { MapLocation } from "@/components/invitation/MapLocation";
 import { RsvpForm } from "@/components/invitation/RsvpForm";
 import { ThankYouGenerator } from "@/components/invitation/ThankYouGenerator";
 import { CONSTANTS } from "@/lib/constants";
+import { useHydration } from "@/hooks/use-hydration";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [showIntro, setShowIntro] = useState(false);
   const [showInvitation, setShowInvitation] = useState(false);
+  const isHydrated = useHydration();
 
   useEffect(() => {
     // Simulate loading time
@@ -38,14 +40,15 @@ export default function Home() {
         <IntroSection onProceed={handleProceedToInvitation} />
       ) : showInvitation ? (
         <>
-          <HeroSection />
-          <CountdownTimer eventDate={CONSTANTS.eventDate} />
-          <DetailsSection />
-          <MapLocation />
-          <RsvpForm />
-          <ThankYouGenerator />
+          {isHydrated ? <HeroSection /> : null}
+          {isHydrated ? <CountdownTimer eventDate={CONSTANTS.eventDate} /> : null}
+          {isHydrated ? <DetailsSection /> : null}
+          {isHydrated ? <MapLocation /> : null}
+          {isHydrated ? <RsvpForm /> : null}
+          {isHydrated ? <ThankYouGenerator /> : null}
         </>
       ) : null}
     </div>
   );
 }
+
