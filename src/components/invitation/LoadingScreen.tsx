@@ -27,11 +27,11 @@ export const LoadingScreen: React.FC = () => {
     const confetti = [];
     for (let i = 0; i < 50; i++) {
       confetti.push({
-        "--left": `${Math.random() * 100}%`,
-        "--size": `${Math.random() * 10 + 5}px`,
-        "--rotation": `${Math.random() * 360}deg`,
-        "--duration": `${Math.random() * 3 + 2}s`,
-        "--delay": `${Math.random()}s`,
+        left: `${Math.random() * 100}%`,
+        size: `${Math.random() * 10 + 5}px`,
+        rotation: `${Math.random() * 360}deg`,
+        duration: `${Math.random() * 3 + 2}s`,
+        delay: `${Math.random()}s`,
       });
     }
     return confetti;
@@ -41,11 +41,11 @@ export const LoadingScreen: React.FC = () => {
     const balloons = [];
     for (let i = 0; i < 10; i++) {
       balloons.push({
-        "--left": `${Math.random() * 100}%`,
-        "--width": `${Math.random() * 50 + 30}px`,
-        "--height": `${Math.random() * 70 + 50}px`,
-        "--duration": `${Math.random() * 5 + 5}s`,
-        "--delay": `${Math.random()}s`,
+        left: `${Math.random() * 100}%`,
+        width: `${Math.random() * 50 + 30}px`,
+        height: `${Math.random() * 70 + 50}px`,
+        duration: `${Math.random() * 5 + 5}s`,
+        delay: `${Math.random()}s`,
       });
     }
     return balloons;
@@ -63,12 +63,12 @@ export const LoadingScreen: React.FC = () => {
             key={index}
             className="confetti"
             style={{
-              "--left": style["--left"],
-              "--size": style["--size"],
-              "--rotation": style["--rotation"],
-              "--duration": style["--duration"],
-              "--delay": style["--delay"],
-            }}
+              "--left": style.left,
+              "--size": style.size,
+              "--rotation": style.rotation,
+              "--duration": style.duration,
+              "--delay": style.delay,
+            } as React.CSSProperties}
           />
         ))}
       </div>
@@ -78,12 +78,12 @@ export const LoadingScreen: React.FC = () => {
             key={index}
             className="balloon"
             style={{
-              "--left": style["--left"],
-              "--width": style["--width"],
-              "--height": style["--height"],
-              "--duration": style["--duration"],
-              "--delay": style["--delay"],
-            }}
+              left: style.left,
+              width: style.width,
+              height: style.height,
+              duration: style.duration,
+              delay: style.delay,
+            } as React.CSSProperties}
           >
             <div className="balloon-string"></div>
           </div>
