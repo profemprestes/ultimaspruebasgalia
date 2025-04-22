@@ -2,24 +2,32 @@
 import React, { useEffect, useRef } from "react";
 
 const confettiColors = [
-  "#fce18a",
-  "#ff726d",
-  "#b48bce",
-  "#f4306d",
-  "#5bca94",
+  "#fce18a", // Light gold
+  "#ff726d", // Salmon
+  "#b48bce", // Lavender
+  "#f4306d", // Magenta
+  "#5bca94", // Mint
+  "#ffb347", // Light orange
+  "#a7d1ab", // Pastel green
+  "#73d1dd", // Light teal
 ];
 
 const getRandomColor = () => {
   return confettiColors[Math.floor(Math.random() * confettiColors.length)];
 };
 
-export const Confetti: React.FC = () => {
-  const numberOfConfetti = 50;
+interface ConfettiProps {
+  numberOfConfetti?: number;
+}
+
+export const Confetti: React.FC<ConfettiProps> = ({ numberOfConfetti = 50 }) => {
   const confettiRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    confettiRef.current = Array.from({ length: numberOfConfetti }, (_, index) => {
-      return document.createElement('div');
+    confettiRef.current = Array.from({ length: numberOfConfetti }, () => {
+      const confetti = document.createElement('div');
+      confetti.className = "confetti";
+      return confetti;
     });
 
     const container = document.querySelector(".confetti-container");
@@ -32,14 +40,13 @@ export const Confetti: React.FC = () => {
         const rotation = Math.random() * 360;
         const color = getRandomColor();
 
-        confetti.className = "confetti";
         confetti.style.width = `${size}px`;
         confetti.style.height = `${size}px`;
         confetti.style.left = `${x}%`;
         confetti.style.animationDelay = `${delay}s`;
         confetti.style.animationDuration = `${duration}s`;
         confetti.style.transform = `rotate(${rotation}deg)`;
-        confetti.style.backgroundColor = color; // Set background color
+        confetti.style.backgroundColor = color;
         container.appendChild(confetti);
       });
     }
@@ -54,7 +61,7 @@ export const Confetti: React.FC = () => {
         });
       }
     };
-  }, []);
+  }, [numberOfConfetti]);
 
   return (
     <div className="confetti-container">

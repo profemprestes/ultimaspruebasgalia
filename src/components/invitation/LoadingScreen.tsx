@@ -2,10 +2,36 @@
 
 import React, { useState, useEffect } from "react";
 import "@/styles/loading-screen.css";
+import { Confetti } from "@/components/animations/Confetti";
+
+interface BalloonStyle {
+  left: string;
+  width: string;
+  height: string;
+  duration: string;
+  delay: string;
+  color: string;
+}
+
+const balloonColors = [
+  '#73d1dd', // Light teal
+  '#ffb347', // Light orange
+  '#a7d1ab', // Pastel green
+  '#fce18a', // Light gold
+  '#ff726d', // Salmon
+  '#b48bce', // Lavender
+  '#f4306d', // Magenta
+  '#5bca94', // Mint
+];
+
+const getRandomBalloonColor = () => {
+  return balloonColors[Math.floor(Math.random() * balloonColors.length)];
+};
 
 export const LoadingScreen: React.FC = () => {
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [balloons, setBalloons] = useState<BalloonStyle[]>([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,57 +49,32 @@ export const LoadingScreen: React.FC = () => {
     return () => clearInterval(interval);
   }, [progress]);
 
-  const getConfetti = () => {
-    const confetti = [];
-    for (let i = 0; i < 50; i++) {
-      confetti.push({
-        left: `${Math.random() * 100}%`,
-        size: `${Math.random() * 10 + 5}px`,
-        rotation: `${Math.random() * 360}deg`,
-        duration: `${Math.random() * 3 + 2}s`,
-        delay: `${Math.random()}s`,
-      });
-    }
-    return confetti;
-  };
+  useEffect(() => {
+    const generateBalloons = () => {
+      const newBalloons: BalloonStyle[] = [];
+      for (let i = 0; i < 10; i++) {
+        const color = getRandomBalloonColor();
+        newBalloons.push({
+          left: `${Math.random() * 100}%`,
+          width: `${Math.random() * 50 + 30}px`,
+          height: `${Math.random() * 70 + 50}px`,
+          duration: `${Math.random() * 5 + 5}s`,
+          delay: `${Math.random()}s`,
+          color: color,
+        });
+      }
+      setBalloons(newBalloons);
+    };
 
-  const getBalloons = () => {
-    const balloons = [];
-    for (let i = 0; i < 10; i++) {
-      balloons.push({
-        left: `${Math.random() * 100}%`,
-        width: `${Math.random() * 50 + 30}px`,
-        height: `${Math.random() * 70 + 50}px`,
-        duration: `${Math.random() * 5 + 5}s`,
-        delay: `${Math.random()}s`,
-      });
-    }
-    return balloons;
-  };
-
-  const confettiList = getConfetti();
-  const balloonList = getBalloons();
+    generateBalloons();
+  }, []);
 
   return (
     <div className={`loader-container ${loading ? "" : "loader-exit"}`}>
       <div className="loader-background"></div>
-      <div className="confetti-container">
-        {confettiList.map((style, index) => (
-          <div
-            key={index}
-            className="confetti"
-            style={{
-              "--left": style.left,
-              "--size": style.size,
-              "--rotation": style.rotation,
-              "--duration": style.duration,
-              "--delay": style.delay,
-            } as React.CSSProperties}
-          />
-        ))}
-      </div>
+      <Confetti numberOfConfetti={70}/>
       <div className="balloon-container">
-        {balloonList.map((style, index) => (
+        {balloons.map((style, index) => (
           <div
             key={index}
             className="balloon"
@@ -81,8 +82,9 @@ export const LoadingScreen: React.FC = () => {
               left: style.left,
               width: style.width,
               height: style.height,
-              duration: style.duration,
-              delay: style.delay,
+              animationDuration: style.duration,
+              animationDelay: style.delay,
+              backgroundColor: style.color,
             } as React.CSSProperties}
           >
             <div className="balloon-string"></div>
