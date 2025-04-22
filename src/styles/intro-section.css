@@ -1,3 +1,4 @@
+
 .intro-section {
   display: flex;
   justify-content: center;
@@ -51,4 +52,3 @@
 .proceed-button:hover {
   background-color: #006666;
 }
-/
