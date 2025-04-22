@@ -16,7 +16,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1; /* Place behind the content */
+  z-index: 1; /* Place behind the content */
 }
 
 /* Daisy and Balloon Styling */
@@ -85,6 +85,8 @@
   text-align: center;
   padding: 20px;
   border-radius: 10px;
+  position: relative;
+  z-index: 2; /* Ensure it's above background */
 }
 
 .intro-header {
@@ -121,6 +123,8 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  z-index: 3;
+  position: relative;
 }
 
 .proceed-button:hover {

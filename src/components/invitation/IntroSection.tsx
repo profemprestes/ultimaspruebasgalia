@@ -56,4 +56,3 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
     </div>
   );
 };
-
