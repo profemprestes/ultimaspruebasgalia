@@ -62,6 +62,17 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
         <Gallery images={images} />
         <Button
           onClick={onProceed}
+          style={{
+            backgroundColor: 'var(--secondary)',
+            color: 'var(--foreground)',
+            padding: '15px 30px',
+            borderRadius: '8px',
+            fontSize: '1.2rem',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s ease, color 0.3s ease',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+            border: 'none',
+          }}
           className="proceed-button"
         >
           Entrar a la invitacion
@@ -70,4 +81,3 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
     </div>
   );
 };
-
