@@ -81,20 +81,8 @@ export const HeroSection: React.FC = () => {
         </CardContent>
       </Card>
       <div className="hero__scroll-indicator" onClick={scrollToDetails}>
-        <span>Desliza para ver más</span>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="hero__scroll-arrow"
-        >
-          <path d="M12 5v14M5 12l7 7 7-7" />
-        </svg>
+        <span  className="hero__scroll-indicator-text">Desliza para ver más</span>
+        <img src="/arrow_down.gif" alt="Desliza hacia abajo" className="hero__scroll-arrow" />
       </div>
     </section>
   );
