@@ -63,7 +63,7 @@ export const HeroSection: React.FC = () => {
             </p>
             <p>
               <CalendarIcon className="hero__icon" stroke="var(--foreground)" size={20}/>
-              10 de Mayo de 2024 | 13:00
+              10 de Mayo de 2025 | 13:00
             </p>
           </div>
 
