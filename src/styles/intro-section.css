@@ -1,5 +1,23 @@
-/* IntroSection.css */
+/*
+* Globals styles
+*/
+.intro-title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
 
+.intro-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  margin-bottom: 30px;
+}
+
+/* ==========================================================================
+    1. Intro Section
+   ========================================================================== */
+/* 1.1 General styles */
 .intro-section {
   display: flex;
   flex-direction: column;
@@ -11,9 +29,11 @@
   position: relative;
   overflow: hidden;
   text-align: center;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
-/* Background animation styles */
+/* 1.2 Background Animation */
 .background-animation {
   position: absolute;
   top: 0;
@@ -78,7 +98,7 @@
   }
 }
 
-/* Intro content styles */
+/* 1.3 Intro Content Styles */
 .intro-content {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 30px;
@@ -92,12 +112,6 @@
   margin-bottom: 20px;
 }
 
-.intro-title {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 10px;
-}
-
 .badge {
   background-color: var(--accent);
   color: var(--accent-foreground);
@@ -107,13 +121,6 @@
   font-weight: bold;
   display: inline-block;
   margin-top: 10px;
-}
-
-.intro-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--foreground);
-  margin-bottom: 30px;
 }
 
 .proceed-button {
@@ -131,94 +138,7 @@
   color: var(--foreground);
 }
 
-/* Gallery Component Styles */
-.gallery-component {
-  background: transparent;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.image-container {
-  position: relative;
-}
-
-.gallery-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.5s ease-in-out;
-}
-
-.image-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 10px;
-  text-align: center;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  font-size: 0.9rem;
-}
-
-.navigation-buttons {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  padding: 0 10px;
-}
-
-.nav-button {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.nav-button:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.navigation-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  background-color: #ddd;
-  border: none;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.dot.active {
-  background-color: #333;
-}
-
-.dot:hover {
-  background-color: #888;
-}
-
-/* Dark mode styles */
+/* 1.4 Dark mode styles */
 .dark .intro-title {
   color: var(--primary); /* Adjust to a suitable dark color */
 }
@@ -227,7 +147,7 @@
   color: var(--foreground); /* Adjust to a suitable dark color */
 }
 
-/* Responsive adjustments */
+/* 1.5 Responsive adjustments */
 @media (max-width: 768px) {
   .intro-section {
     padding: 10px;
@@ -254,17 +174,113 @@
     font-size: 1rem;
     padding: 10px 20px;
   }
+}
 
-  .image-caption {
+/* ==========================================================================
+    2. Gallery
+   ========================================================================== */
+/* 2.1 General styles */
+.gallery-component {
+  background: transparent;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.gallery-component .image-container {
+  position: relative;
+}
+
+.gallery-component .gallery-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-component .image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* 2.2 Navigation */
+.gallery-component .navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 0 10px;
+}
+
+.gallery-component .nav-button {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.gallery-component .nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 2.3 Dots */
+.gallery-component .navigation-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.gallery-component .dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.gallery-component .dot.active {
+  background-color: #333;
+}
+
+.gallery-component .dot:hover {
+  background-color: #888;
+}
+
+/* 2.4 Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-component .image-caption {
     font-size: 0.8rem;
   }
 
-  .navigation-buttons {
-    padding: 0 5px;
-  }
-
-  .nav-button {
+  .gallery-component .nav-button {
     width: 30px;
     height: 30px;
+  }
+
+  .gallery-component .dot {
+    width: 8px;
+    height: 8px;
   }
 }
