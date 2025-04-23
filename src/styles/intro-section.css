@@ -1,23 +1,3 @@
-/*
-* Globals styles
-*/
-.intro-title {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 10px;
-}
-
-.intro-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--foreground);
-  margin-bottom: 30px;
-}
-
-/* ==========================================================================
-    1. Intro Section
-   ========================================================================== */
-/* 1.1 General styles */
 .intro-section {
   display: flex;
   flex-direction: column;
@@ -106,10 +86,22 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 90%;
   text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.intro-content:hover {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .intro-header {
   margin-bottom: 20px;
+}
+
+.intro-title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
 }
 
 .badge {
@@ -121,8 +113,24 @@
   font-weight: bold;
   display: inline-block;
   margin-top: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.intro-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  margin-bottom: 30px;
+  transition: color 0.3s ease;
+}
+
+.gallery-component {
+  background: transparent;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 1.4 Proceed Button */
 .proceed-button {
   background-color: var(--primary);
   color: var(--primary-foreground);
@@ -130,7 +138,7 @@
   border-radius: 8px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .proceed-button:hover {
@@ -138,54 +146,7 @@
   color: var(--foreground);
 }
 
-/* 1.4 Dark mode styles */
-.dark .intro-title {
-  color: var(--primary); /* Adjust to a suitable dark color */
-}
-
-.dark .intro-description {
-  color: var(--foreground); /* Adjust to a suitable dark color */
-}
-
-/* 1.5 Responsive adjustments */
-@media (max-width: 768px) {
-  .intro-section {
-    padding: 10px;
-  }
-
-  .intro-content {
-    padding: 20px;
-  }
-
-  .intro-title {
-    font-size: 2rem;
-  }
-
-  .badge {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
-
-  .intro-description {
-    font-size: 1rem;
-  }
-
-  .proceed-button {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-}
-
-/* ==========================================================================
-    2. Gallery
-   ========================================================================== */
-/* 2.1 General styles */
-.gallery-component {
-  background: transparent;
-  padding: 20px;
-  border-radius: 10px;
-}
-
+/* 1.5 Gallery Styles */
 .gallery-component .image-container {
   position: relative;
 }
@@ -195,7 +156,11 @@
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+}
+
+.gallery-component .gallery-image:hover {
+  transform: scale(1.05);
 }
 
 .gallery-component .image-caption {
@@ -212,7 +177,7 @@
   font-size: 0.9rem;
 }
 
-/* 2.2 Navigation */
+/* 1.6 Navigation Buttons */
 .gallery-component .navigation-buttons {
   display: flex;
   justify-content: space-between;
@@ -242,7 +207,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* 2.3 Dots */
+/* 1.7 Dots */
 .gallery-component .navigation-dots {
   display: flex;
   justify-content: center;
@@ -268,8 +233,42 @@
   background-color: #888;
 }
 
-/* 2.4 Responsive adjustments */
+/* 1.8 Intro Section - Dark Mode */
+.dark .intro-title {
+  color: var(--primary); /* Adjust to a suitable dark color */
+}
+
+.dark .intro-description {
+  color: var(--foreground); /* Adjust to a suitable dark color */
+}
+
+/* 1.9 Responsive adjustments */
 @media (max-width: 768px) {
+  .intro-section {
+    padding: 10px;
+  }
+
+  .intro-content {
+    padding: 20px;
+  }
+
+  .intro-title {
+    font-size: 2rem;
+  }
+
+  .badge {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .intro-description {
+    font-size: 1rem;
+  }
+
+  .proceed-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
   .gallery-component .image-caption {
     font-size: 0.8rem;
   }
@@ -283,69 +282,4 @@
     width: 8px;
     height: 8px;
   }
-}
-
-/* ==========================================================================
-    3. Birthday related - Intro Section
-   ========================================================================== */
-
-.intro-container .birthday-title {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #ff69b4;
-}
-
-.intro-container .birthday-badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fdd835;
-  color: #fff;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 15px;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.intro-container .birthday-badge span:first-child {
-  font-size: 2rem;
-  margin-right: 5px;
-}
-
-.intro-container .birthday-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-@media (max-width: 768px) {
-  .intro-container .birthday-title {
-    font-size: 2rem;
-  }
-
-  .intro-container .birthday-badge {
-    width: 60px;
-    height: 60px;
-    font-size: 1rem;
-  }
-
-  .intro-container .birthday-badge span:first-child {
-    font-size: 1.5rem;
-  }
-
-  .intro-container .birthday-description {
-    font-size: 1rem;
-  }
-}
-
-/* Dark mode adjustments - Intro Section */
-.dark .intro-container .birthday-title {
-  color: #ffb6c1; /* Adjust to a softer pink for dark mode */
-}
-
-.dark .intro-container .birthday-description {
-  color: #ddd; /* Adjust to a lighter color for dark mode */
 }
