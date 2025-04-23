@@ -1,3 +1,4 @@
+
 .intro-section {
   display: flex;
   flex-direction: column;
@@ -124,12 +125,6 @@
   transition: color 0.3s ease;
 }
 
-.gallery-component {
-  background: transparent;
-  padding: 20px;
-  border-radius: 10px;
-}
-
 /* 1.4 Proceed Button */
 .proceed-button {
   background-color: var(--primary);
@@ -147,8 +142,17 @@
 }
 
 /* 1.5 Gallery Styles */
+.gallery-component {
+  background: transparent;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 1.5 Gallery Styles */
 .gallery-component .image-container {
   position: relative;
+  max-width: 100%; /* Make the container responsive */
+  overflow: hidden;
 }
 
 .gallery-component .gallery-image {
