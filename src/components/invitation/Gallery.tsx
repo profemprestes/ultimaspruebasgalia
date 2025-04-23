@@ -3,7 +3,7 @@
 import React from "react";
 import { useGallery } from "@/hooks/use-gallery";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import "@/styles/gallery.css";
+import "@/styles/intro-section.css";
 
 interface GalleryImage {
   src: string;

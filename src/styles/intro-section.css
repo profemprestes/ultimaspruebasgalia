@@ -1,69 +1,69 @@
+/* IntroSection.css */
 
 .intro-section {
-  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
   padding: 20px;
+  box-sizing: border-box;
+  position: relative;
   overflow: hidden;
-  background: linear-gradient(to bottom, #a7d1ab, #ffeb3b);
+  text-align: center;
 }
 
-.intro-section .background-animation {
+/* Background animation styles */
+.background-animation {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 1;
+  z-index: -1;
 }
 
-.intro-section .daisy,
-.intro-section .balloon {
+.daisy,
+.balloon {
   position: absolute;
-  animation: float 15s linear infinite;
+  width: 50px;
+  height: auto;
   opacity: 0.7;
+  animation: float 8s infinite linear;
 }
 
-.intro-section .daisy {
-  width: 50px; /* Smaller daisies */
-  height: auto;
+.daisy-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
 }
 
-.intro-section .balloon {
-  width: 70px; /* Smaller balloons */
-  height: auto;
-}
-
-.intro-section .daisy-1 {
-  top: 10%; /* Closer to the top */
-  left: 5%; /* Towards the left edge */
-}
-
-.intro-section .balloon-1 {
-  top: 20%;
-  right: 5%;
+.daisy-2 {
+  bottom: 10%;
+  right: 10%;
   animation-delay: 2s;
 }
 
-.intro-section .balloon-2 {
-  bottom: 10%; /* Higher from the bottom */
-  left: 10%;
+.balloon-1 {
+  top: 20%;
+  right: 15%;
+  width: 70px;
   animation-delay: 4s;
 }
 
-.intro-section .balloon-3 {
+.balloon-2 {
   bottom: 20%;
-  right: 15%;
+  left: 15%;
+  width: 60px;
   animation-delay: 6s;
 }
 
-.intro-section .daisy-2 {
-  top: 5%;
-  right: 10%;
-  animation-delay: 3s;
+.balloon-3 {
+  top: 35%;
+  left: 30%;
+  width: 80px;
+  animation-delay: 8s;
 }
 
 @keyframes float {
@@ -71,167 +71,200 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px); /* Reduced float height */
+    transform: translateY(-20px);
   }
   100% {
     transform: translateY(0);
   }
 }
 
-.intro-section .intro-content {
-  max-width: 750px;
-  text-align: center;
+/* Intro content styles */
+.intro-content {
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 30px;
-  background-color: #fffc;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px #0000001a;
-  position: relative;
-  z-index: 2;
-  opacity: 1;
-  filter: blur(0px);
-  -webkit-font-smoothing: antialiased;
-  color: var(--foreground); /* Use foreground CSS variable for text color */
-  line-height: 1.6;
-  font-family: sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  animation: blurred-fade-in 1s ease-out forwards;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  text-align: center;
 }
 
-/* Dark mode adjustments */
-.dark .intro-section .intro-content {
-  color: var(--foreground); /* Adjust text color for dark mode */
-}
-
-@keyframes blurred-fade-in {
-  0% {
-    opacity: 0;
-    filter: blur(5px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-.intro-section .intro-header {
+.intro-header {
   margin-bottom: 20px;
 }
 
-.intro-section .intro-title {
+.intro-title {
   font-size: 2.5rem;
-  color: var(--primary); /* Use primary color */
-  font-family: var(--font-heading);
-  margin-bottom: 1rem;
-  font-weight: normal;
+  color: var(--primary);
+  margin-bottom: 10px;
 }
 
-.dark .intro-section .intro-title {
-    color: var(--primary); /* Adjust title color for dark mode */
-}
-
-.intro-section .badge {
-  display: inline-block;
+.badge {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
   padding: 8px 16px;
-  background-color: var(--secondary);
-  color: var(--accent);
-  border-radius: var(--radius-round);
-  font-size: 1em;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
   margin-top: 10px;
-  font-family: var(--font-alt);
-  box-shadow: var(--shadow-sm);
 }
 
-.intro-section .intro-description {
-  font-size: 1.2em;
-  color: var(--foreground); /* Use foreground CSS variable for text color */
+.intro-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--foreground);
   margin-bottom: 30px;
-  font-family: var(--font-body);
 }
 
-.dark .intro-section .intro-description {
-    color: var(--foreground); /* Adjust description color for dark mode */
+.proceed-button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.intro-section .proceed-button {
-    padding: 12px 24px;
-    font-size: 1.1em;
-    background-color: green;
-    color: white;
-    border: 2px solid var(--primary);
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: background-color var(--transition-fast);
-    z-index: 3;
-    position: relative;
-    box-shadow: var(--shadow-sm);
-    font-family: var(--font-body);
-    font-weight: bold;
+.proceed-button:hover {
+  background-color: var(--secondary);
+  color: var(--foreground);
 }
 
-.intro-section .proceed-button:hover {
-    background-color: red;
+/* Gallery Component Styles */
+.gallery-component {
+  background: transparent;
+  padding: 20px;
+  border-radius: 10px;
 }
 
+.image-container {
+  position: relative;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 0 10px;
+}
+
+.nav-button {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navigation-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+.dot:hover {
+  background-color: #888;
+}
+
+/* Dark mode styles */
+.dark .intro-title {
+  color: var(--primary); /* Adjust to a suitable dark color */
+}
+
+.dark .intro-description {
+  color: var(--foreground); /* Adjust to a suitable dark color */
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .intro-section .intro-content {
-    max-width: 90%;
-    margin: 0 auto;
+  .intro-section {
+    padding: 10px;
   }
 
-  .intro-section .intro-title {
-    font-size: 2em;
+  .intro-content {
+    padding: 20px;
   }
 
-  .intro-section .intro-description {
-    font-size: 1em;
+  .intro-title {
+    font-size: 2rem;
   }
 
-  .intro-section .badge {
-    font-size: 0.9em;
+  .badge {
+    font-size: 0.9rem;
     padding: 6px 12px;
   }
 
-  .intro-section .proceed-button {
-    font-size: 1em;
+  .intro-description {
+    font-size: 1rem;
+  }
+
+  .proceed-button {
+    font-size: 1rem;
     padding: 10px 20px;
   }
 
-  .intro-section .daisy,
-  .intro-section .balloon {
-    opacity: 0.5;
-  }
-}
-
-@media (max-width: 480px) {
-  .intro-section .intro-title {
-    font-size: 1.7em;
+  .image-caption {
+    font-size: 0.8rem;
   }
 
-  .intro-section .intro-description {
-    font-size: 0.9em;
+  .navigation-buttons {
+    padding: 0 5px;
   }
 
-  .intro-section .badge {
-    font-size: 0.8em;
-    padding: 6px 12px;
+  .nav-button {
+    width: 30px;
+    height: 30px;
   }
-
-  .intro-section .proceed-button {
-    font-size: 0.9em;
-    padding: 8px 16px;
-  }
-
-  .intro-section .daisy,
-  .intro-section .balloon {
-    width: 60px;
-  }
-}
-
-.dark .intro-section .intro-content {
-  color: var(--muted-foreground); /* Adjust text color for dark mode */
-}
-
-.dark .intro-section .intro-description {
-  color: var(--muted-foreground); /* Darker description color for dark mode */
 }
