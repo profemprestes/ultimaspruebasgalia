@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Gallery } from "@/components/invitation/Gallery";
-import "@/styles/intro-section.css"; // Ensure this CSS file exists and is correctly styled
+import { motion } from "framer-motion";
+import "@/styles/intro-section.css";
 
 interface IntroSectionProps {
   onProceed: () => void;
@@ -29,81 +30,105 @@ const images = [
 ];
 
 export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Añadir un pequeño retraso para la animación de entrada
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="intro-section">
-      {/* Background Animation remains the same */}
+      {/* Animaciones de fondo mejoradas */}
       <div className="background-animation">
-        <img src="/img/daisy.png" alt="Daisy" className="daisy daisy-1" />
+        <img src="/img/daisy.png" alt="Margarita" className="daisy daisy-1 floating" />
         <img
           src="/img/balloon2.jpg"
-          alt="Balloon"
-          className="balloon balloon-1"
+          alt="Globo"
+          className="balloon balloon-1 floating-slow"
         />
         <img
           src="/img/balloon2.jpg"
-          alt="Balloon"
-          className="balloon balloon-2"
+          alt="Globo"
+          className="balloon balloon-2 floating-medium"
         />
         <img
           src="/img/balloon1.svg"
-          alt="Balloon"
-          className="balloon balloon-3"
+          alt="Globo"
+          className="balloon balloon-3 floating-fast"
         />
-        <img src="/img/daisy.png" alt="Daisy" className="daisy daisy-2" />
+        <img src="/img/daisy.png" alt="Margarita" className="daisy daisy-2 floating-reverse" />
+        
+        {/* Elementos decorativos adicionales */}
+        <div className="confetti confetti-1"></div>
+        <div className="confetti confetti-2"></div>
+        <div className="confetti confetti-3"></div>
+        <div className="confetti confetti-4"></div>
       </div>
 
-      {/* Main Content */}
-      <div className="intro-content">
-        <header className="intro-header">
-          {/* Apply new styles to the title */}
-          <h1 className="intro-title" style={{ fontFamily: 'Parisienne, cursive', color: 'hsl(var(--primary))' }}>
+      {/* Contenido principal con animaciones */}
+      <motion.div 
+        className="intro-content"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.header 
+          className="intro-header"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -20 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
+          <h1 className="intro-title">
             ¡Celebra conmigo!
           </h1>
-          {/* Ensure badge styles are appropriate */}
-          <div className="badge">1 añito</div>
-        </header>
-        {/* Adjust description styles */}
-        <p className="intro-description">
+          <motion.div 
+            className="badge"
+            initial={{ scale: 0 }}
+            animate={{ scale: isVisible ? 1 : 0 }}
+            transition={{ duration: 0.5, delay: 0.6, type: "spring", stiffness: 200 }}
+          >
+            1 añito
+          </motion.div>
+        </motion.header>
+        
+        <motion.p 
+          className="intro-description"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isVisible ? 1 : 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+        >
           Galia está cumpliendo su primer añito y quiere compartir este día tan
           especial contigo
-        </p>
+        </motion.p>
 
-        {/* Gallery component remains the same */}
-        <Gallery images={images} />
-
-        {/* Button styles adjusted */}
-        <Button
-          onClick={onProceed}
-          style={{
-            backgroundColor: 'hsl(var(--secondary))', // Use secondary color
-            color: 'hsl(var(--secondary-foreground))', // Use secondary foreground color
-            padding: '15px 30px',
-            borderRadius: 'var(--radius-lg)', // Use theme radius
-            fontSize: '1.2rem',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease', // Added transform and shadow transition
-            boxShadow: 'var(--shadow-md)', // Use theme shadow
-            border: 'none',
-            fontWeight: 600, // Make text slightly bolder
-            marginTop: '2rem', // Add some space above the button
-          }}
-          className="proceed-button" // Keep class for potential CSS overrides or hover effects
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'hsl(var(--accent))'; // Use accent color on hover
-            e.currentTarget.style.color = 'hsl(var(--accent-foreground))';
-            e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'hsl(var(--secondary))';
-            e.currentTarget.style.color = 'hsl(var(--secondary-foreground))';
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = 'var(--shadow-md)';
-          }}
+        {/* Galería con animación de entrada */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.95 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
         >
-          Entrar a la invitacion
-        </Button>
-      </div>
+          <Gallery images={images} />
+        </motion.div>
+
+        {/* Botón con animación de entrada y efectos de hover mejorados */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          className="button-container"
+        >
+          <Button
+            onClick={onProceed}
+            className="proceed-button"
+          >
+            Entrar a la invitación
+          </Button>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
