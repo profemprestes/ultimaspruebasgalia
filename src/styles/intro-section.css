@@ -6,7 +6,8 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #fef6ff 0%, #ffe6f2 100%);
+  /* Updated background to a linear gradient */
+  background: linear-gradient(135deg, #A7D1AB 0%, #FFEB3B 100%);
   font-family: 'Poppins', sans-serif;
   padding: 2rem;
 }
@@ -166,15 +167,16 @@
   z-index: 1;
   max-width: 800px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.85);
+  background: hsla(var(--card) / 0.85); /* Use card color with transparency */
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg); /* Use theme shadow */
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid hsla(var(--border) / 0.5); /* Subtle border */
 }
 
 /* Encabezado */
@@ -188,10 +190,10 @@
 
 .intro-title {
   font-family: 'Parisienne', cursive;
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 6vw, 3.5rem); /* Responsive font size */
   color: hsl(var(--primary));
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 3px hsla(var(--primary) / 0.2);
   letter-spacing: 1px;
 }
 
@@ -199,14 +201,22 @@
   position: relative;
   background: hsl(var(--secondary));
   color: hsl(var(--secondary-foreground));
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.5rem 1.2rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem); /* Responsive font size */
+  font-weight: 700; /* Bolder */
+  padding: 0.6rem 1.4rem; /* Adjusted padding */
   border-radius: 30px;
   margin-top: 0.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   transform-origin: center;
+  /* Badge animation */
+  animation: pulse-badge 2s infinite ease-in-out;
 }
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); box-shadow: var(--shadow-md); }
+  50% { transform: scale(1.08); box-shadow: var(--shadow-lg); }
+}
+
 
 .badge::before,
 .badge::after {
@@ -214,8 +224,9 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1.8vw, 1rem); /* Responsive icon size */
   color: hsl(var(--primary));
+  opacity: 0.8;
 }
 
 .badge::before {
@@ -228,29 +239,31 @@
 
 /* Descripción */
 .intro-description {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
   color: hsl(var(--muted-foreground));
   margin-bottom: 2rem;
   line-height: 1.6;
-  max-width: 80%;
+  max-width: 85%; /* Limit width */
 }
 
 /* Componente de galería */
 .gallery-component {
   width: 100%;
-  max-width: 600px;
+  max-width: 550px; /* Slightly reduced max-width */
   margin: 0 auto 2rem;
 }
 
 .image-container {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 100%; /* Make container full width */
+  padding-top: 100%; /* 1:1 Aspect Ratio */
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-lg);
   margin: 0 auto 1rem;
+  background-color: hsl(var(--muted)); /* Placeholder color */
 }
+
 
 .image-wrapper {
   position: absolute;
@@ -261,15 +274,20 @@
 }
 
 .gallery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(1);
 }
 
 .gallery-image:hover {
   transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 .image-caption {
@@ -277,27 +295,33 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-  color: white;
-  padding: 1rem;
-  font-size: 1.1rem;
+  background: linear-gradient(to top, hsla(var(--foreground) / 0.8), transparent);
+  color: hsl(var(--background));
+  padding: 1.2rem 1rem 0.8rem; /* More padding at top */
+  font-size: clamp(0.9rem, 2vw, 1.1rem); /* Responsive font size */
   text-align: center;
   font-weight: 500;
+  border-bottom-left-radius: 15px; /* Match container radius */
+  border-bottom-right-radius: 15px;
 }
 
 .image-loader {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute; /* Position loader inside container */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: hsla(var(--background) / 0.8);
 }
+
 
 .loader-spinner {
   width: 40px;
   height: 40px;
-  border: 4px solid rgba(0, 0, 0, 0.1);
+  border: 4px solid hsla(var(--primary) / 0.2);
   border-radius: 50%;
   border-top-color: hsl(var(--primary));
   animation: spin 1s ease-in-out infinite;
@@ -314,48 +338,52 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 1rem;
+  padding: 0 0.5rem; /* Add some padding */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-bottom: 1rem; /* Space below buttons */
 }
+
 
 .nav-button {
   background-color: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: clamp(35px, 8vw, 45px); /* Responsive size */
+  height: clamp(35px, 8vw, 45px);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .nav-button:hover {
-  background-color: hsl(var(--primary-foreground));
-  color: hsl(var(--primary));
+  background-color: hsl(var(--primary) / 0.85);
   transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .nav-button:active {
   transform: scale(0.95);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Puntos de navegación */
 .navigation-dots {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: clamp(0.4rem, 1.5vw, 0.6rem); /* Responsive gap */
+  margin-top: 1rem; /* Space above dots */
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: clamp(10px, 2.5vw, 12px); /* Responsive size */
+  height: clamp(10px, 2.5vw, 12px);
   border-radius: 50%;
   background-color: hsl(var(--muted));
-  border: none;
+  border: 1px solid hsl(var(--border)); /* Add subtle border */
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -363,10 +391,11 @@
 .dot.active {
   background-color: hsl(var(--primary));
   transform: scale(1.2);
+  border-color: hsl(var(--primary));
 }
 
 .dot:hover {
-  background-color: hsl(var(--primary-foreground));
+  background-color: hsl(var(--primary) / 0.5); /* Lighter primary on hover */
 }
 
 /* Botón de proceder */
@@ -378,126 +407,102 @@
 }
 
 .proceed-button {
-  background-color: hsl(var(--secondary));
-  color: hsl(var(--secondary-foreground));
-  padding: 0.8rem 2rem;
-  font-size: 1.2rem;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
+  /* Styles are now handled by inline styles + Tailwind, this class is for targeting */
 }
 
-.proceed-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: all 0.6s ease;
-}
-
-.proceed-button:hover {
-  background-color: hsl(var(--accent));
-  color: hsl(var(--accent-foreground));
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.proceed-button:hover::before {
-  left: 100%;
-}
-
-.proceed-button:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
 
 /* Responsive */
 @media (max-width: 768px) {
+  .intro-section {
+    padding: 1.5rem; /* Reduce padding on smaller screens */
+  }
   .intro-content {
     padding: 1.5rem;
     max-width: 90%;
   }
-  
-  .intro-title {
-    font-size: 2.5rem;
-  }
-  
-  .intro-description {
-    font-size: 1rem;
-    max-width: 95%;
-  }
-  
+
   .gallery-component {
-    max-width: 100%;
+    max-width: 95%; /* Allow gallery to take more width */
   }
-  
+
   .image-container {
-    width: 300px;
-    height: 300px;
-  }
-  
-  .proceed-button {
-    font-size: 1rem;
-    padding: 0.7rem 1.5rem;
+     padding-top: 100%; /* Keep 1:1 */
   }
 }
 
 @media (max-width: 480px) {
+  .intro-section {
+    padding: 1rem;
+  }
   .intro-content {
     padding: 1.2rem;
     max-width: 95%;
   }
-  
-  .intro-title {
-    font-size: 2rem;
+
+   .image-container {
+     padding-top: 100%; /* Keep 1:1 */
   }
-  
-  .badge {
-    font-size: 0.8rem;
-    padding: 0.4rem 1rem;
+
+  .intro-description {
+    max-width: 100%;
   }
-  
-  .image-container {
-    width: 280px;
-    height: 280px;
-  }
-  
-  .nav-button {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .dot {
-    width: 10px;
-    height: 10px;
+
+  .badge::before,
+  .badge::after {
+    display: none; /* Hide decorative elements on very small screens */
   }
 }
 
-/* Añadir soporte para tablets */
-@media (min-width: 481px) and (max-width: 1024px) {
-  .intro-content {
-    max-width: 85%;
-  }
-  
-  .gallery-component {
-    max-width: 90%;
-  }
-  
-  .image-container {
-    width: 300px;
-    height: 300px;
-  }
+/* Dark mode adjustments */
+.dark .intro-section {
+   background: linear-gradient(135deg, hsl(var(--primary)/0.7), hsl(var(--secondary)/0.7)); /* Darker gradient */
+}
+
+.dark .intro-content {
+  background: hsla(var(--card) / 0.9); /* Darker card background */
+  border-color: hsla(var(--border) / 0.3);
+}
+
+.dark .intro-title {
+  color: hsl(var(--primary-foreground)); /* Lighter title */
+  text-shadow: 1px 1px 3px hsla(var(--primary) / 0.4);
+}
+
+.dark .badge {
+  background: hsl(var(--secondary) / 0.8); /* Slightly darker secondary */
+}
+
+.dark .intro-description {
+  color: hsl(var(--muted-foreground));
+}
+
+.dark .gallery-image:hover {
+  filter: brightness(1.05); /* Less intense brightness on dark */
+}
+
+.dark .image-caption {
+  background: linear-gradient(to top, hsla(var(--foreground) / 0.9), transparent);
+  color: hsl(var(--background));
+}
+
+.dark .nav-button {
+  background-color: hsl(var(--primary) / 0.7); /* Darker button */
+}
+
+.dark .nav-button:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
+.dark .dot {
+  background-color: hsl(var(--muted) / 0.5);
+  border-color: hsl(var(--border) / 0.5);
+}
+
+.dark .dot.active {
+  background-color: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+
+.dark .dot:hover {
+  background-color: hsl(var(--primary) / 0.3);
 }
