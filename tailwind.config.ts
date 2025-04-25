@@ -10,8 +10,10 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			background: 'hsl(0, 0%, 100%)', // White
-  			foreground: 'hsl(240, 10%, 3.9%)', // Dark gray, almost black
+  			base: {
+  				background: 'hsl(0, 0%, 100%)', // White
+  				foreground: 'hsl(240, 10%, 3.9%)' // Dark gray, almost black
+  			},
   			card: {
   				DEFAULT: 'hsl(0, 0%, 100%)', // White
   				foreground: 'hsl(240, 10%, 3.9%)' // Dark gray, almost black
