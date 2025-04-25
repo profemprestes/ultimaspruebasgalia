@@ -9,6 +9,8 @@ import { MapLocation } from "@/components/invitation/MapLocation";
 import { RsvpForm } from "@/components/invitation/RsvpForm";
 import { ThankYouGenerator } from "@/components/invitation/ThankYouGenerator";
 import { CONSTANTS } from "@/lib/constants";
+// import PartySection from "@/components/invitation/PartySection"; // Removed as per previous request
+import BotonFlotanteRegalos from "@/components/invitation/BotonFlotanteRegalos"; // Import the floating button
 
 
 export default function Home() {
@@ -37,13 +39,17 @@ export default function Home() {
       ) : showIntro ? (
         <IntroSection onProceed={handleProceedToInvitation} />
       ) : showInvitation ? (
-        <main className="w-full">
-          <HeroSection />
-          <DetailsSection />
-          {/* <MapLocation /> */}
-          {/* <RsvpForm /> */}
-          {/* <ThankYouGenerator /> */}
-        </main>
+        <> {/* Use Fragment to wrap multiple elements */}
+          <main className="w-full">
+            <HeroSection />
+            <DetailsSection />
+            {/* <PartySection />  Removed as per previous request */}
+            {/* <MapLocation /> */}
+            {/* <RsvpForm /> */}
+            {/* <ThankYouGenerator /> */}
+          </main>
+          <BotonFlotanteRegalos /> {/* Render the floating button */}
+        </>
       ) : null}
     </div>
   );
