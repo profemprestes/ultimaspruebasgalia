@@ -25,14 +25,14 @@ export default function ModalGalia({ cerrar }: ModalGaliaProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-500 animate-fade-in">
       <div
         ref={modalRef}
-        className="bg-white rounded-xl p-6 w-full max-w-lg shadow-lg relative overflow-y-auto max-h-[90vh]"
+        className="bg-white rounded-xl p-6 w-full max-w-lg shadow-lg relative overflow-y-auto max-h-[90vh] transform transition-all duration-500 scale-95 animate-in fade-in-0 zoom-in-95 slide-in-from-bottom-10"
       >
         <button
           onClick={cerrar}
-          className="absolute top-2 right-3 text-gray-500 hover:text-black text-xl"
+          className="absolute top-2 right-3 text-gray-500 hover:text-black text-xl transition-colors duration-300 hover:scale-110"
         >
           ×
         </button>
@@ -54,7 +54,11 @@ export default function ModalGalia({ cerrar }: ModalGaliaProps) {
 
         <div className="mt-6 border-t pt-4 text-sm sm:text-base">
           <p className="font-semibold text-gray-800">💸 Tambien para que no te compliques mis padres me puestan la cuenta:</p>
-          <p><strong>Titular:</strong> MAURO PRESTES</p>
+          <div className="flex items-center gap-2 mb-1">
+  <img src="/brou.png" alt="Logo BROU" className="w-6 h-6" />
+  <p><strong>Banco:</strong> BROU</p>
+</div>
+<p><strong>Titular:</strong> MAURO PRESTES</p>
           <p>
             <strong>Número:</strong>{" "}
             <span className="font-mono bg-gray-100 px-2 py-1 rounded">
