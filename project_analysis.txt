@@ -1,0 +1,1221 @@
+# Análisis del Proyecto 'Galia's First Adventure'
+
+## Estructura del Proyecto
+
+└── ./
+    ├── docs/
+    │   └── blueprint.md
+    ├── public/
+    │   ├── galia/
+    │   │   ├── galiabebe.webp
+    │   │   ├── galiahamaca.webp
+    │   │   ├── galiamaurogime.webp
+    │   │   ├── galiamaurogimeauto.webp
+    │   │   ├── galiamaurogimebalcon.webp
+    │   │   ├── galiamaurogimeplaya.webp
+    │   │   ├── galiaplaya.webp
+    │   │   ├── galiarisa.webp
+    │   │   ├── galiavideo.mp4
+    │   │   └── sandraomargalia.webp
+    │   ├── img/
+    │   │   ├── 6514182.jpg
+    │   │   ├── Galia.png
+    │   │   ├── GaliaCumple.svg
+    │   │   ├── Sin título (500 x 500 px)_20250413_061155_0000.png
+    │   │   ├── balloon1.jfif
+    │   │   ├── balloon1.svg
+    │   │   ├── balloon2.jpg
+    │   │   ├── balloon2.svg
+    │   │   ├── balloon3.svg
+    │   │   ├── daisy-new.svg
+    │   │   ├── daisy.png
+    │   │   ├── daisy.svg
+    │   │   ├── daisynueva.svg
+    │   │   ├── daisynueva1.svg
+    │   │   ├── favicon.svg
+    │   │   ├── girasoles.png
+    │   │   ├── girasoles.svg
+    │   │   ├── sunflower.svg
+    │   │   └── sunflowers.svg
+    │   ├── GaliaFoto.png
+    │   ├── GaliaHero.gif
+    │   ├── GaliaHero.svg
+    │   ├── GaliaHero1.gif
+    │   ├── GaliaJHero.mp4
+    │   ├── arrow_down.gif
+    │   ├── brou.png
+    │   ├── camera.gif
+    │   ├── celebration.gif
+    │   ├── ceremonia.gif
+    │   ├── daisy.svg
+    │   ├── divider.png
+    │   ├── dress-code.gif
+    │   ├── enviarmensaje.gif
+    │   ├── favicon.png
+    │   ├── favicon.svg
+    │   ├── fondoback.gif
+    │   ├── galia1.webp
+    │   ├── galia2.webp
+    │   ├── galia3.webp
+    │   ├── galia4.webp
+    │   ├── heard-loading.gif
+    │   ├── heard-message.gif
+    │   ├── hero.svg
+    │   ├── hero.webp
+    │   ├── hero1.svg
+    │   ├── hero2.webp
+    │   ├── herogalia.gif
+    │   ├── icon-192x192.png
+    │   ├── love-heart.gif
+    │   ├── manifest.json
+    │   ├── margarita.gif
+    │   ├── mark_close.svg
+    │   ├── mark_open.svg
+    │   ├── music.gif
+    │   ├── sobremi.gif
+    │   └── tips.gif
+    ├── src/
+    │   ├── ai/
+    │   │   ├── flows/
+    │   │   │   ├── thank-you-message-generator.ts
+    │   │   │   └── thank-you-message.ts
+    │   │   ├── ai-instance.ts
+    │   │   └── dev.ts
+    │   ├── app/
+    │   │   ├── api/
+    │   │   │   ├── mensajes/
+    │   │   │   │   └── route.ts
+    │   │   │   └── rsvp/
+    │   │   │       └── route.ts
+    │   │   ├── favicon.ico
+    │   │   ├── favicon.svg
+    │   │   ├── globals.css
+    │   │   ├── layout.tsx
+    │   │   └── page.tsx
+    │   ├── components/
+    │   │   ├── animations/
+    │   │   │   ├── Confetti.tsx
+    │   │   │   └── DaisyFlower.tsx
+    │   │   ├── invitation/
+    │   │   │   ├── BotonFlotanteMensajes.tsx
+    │   │   │   ├── BotonFlotanteRegalos.tsx
+    │   │   │   ├── ConfirmacionModal.tsx
+    │   │   │   ├── CountdownTimer.tsx
+    │   │   │   ├── DetailsSection.tsx
+    │   │   │   ├── Gallery.tsx
+    │   │   │   ├── HeroSection.tsx
+    │   │   │   ├── IntroSection.tsx
+    │   │   │   ├── LoadingScreen.tsx
+    │   │   │   ├── MapLocation.tsx
+    │   │   │   ├── MensajeModal.tsx
+    │   │   │   ├── ModalGalia.tsx
+    │   │   │   ├── PartySection.tsx
+    │   │   │   ├── RsvpForm.tsx
+    │   │   │   ├── Sobremimodal.tsx
+    │   │   │   └── ThankYouGenerator.tsx
+    │   │   ├── ui/
+    │   │   │   ├── accordion.tsx
+    │   │   │   ├── alert-dialog.tsx
+    │   │   │   ├── alert.tsx
+    │   │   │   ├── avatar.tsx
+    │   │   │   ├── badge.tsx
+    │   │   │   ├── button.tsx
+    │   │   │   ├── calendar.tsx
+    │   │   │   ├── card.tsx
+    │   │   │   ├── chart.tsx
+    │   │   │   ├── checkbox.tsx
+    │   │   │   ├── dialog.tsx
+    │   │   │   ├── dropdown-menu.tsx
+    │   │   │   ├── form.tsx
+    │   │   │   ├── input.tsx
+    │   │   │   ├── label.tsx
+    │   │   │   ├── menubar.tsx
+    │   │   │   ├── popover.tsx
+    │   │   │   ├── progress.tsx
+    │   │   │   ├── radio-group.tsx
+    │   │   │   ├── scroll-area.tsx
+    │   │   │   ├── select.tsx
+    │   │   │   ├── separator.tsx
+    │   │   │   ├── sheet.tsx
+    │   │   │   ├── sidebar.tsx
+    │   │   │   ├── skeleton.tsx
+    │   │   │   ├── slider.tsx
+    │   │   │   ├── switch.tsx
+    │   │   │   ├── table.tsx
+    │   │   │   ├── tabs.tsx
+    │   │   │   ├── textarea.tsx
+    │   │   │   ├── toast.tsx
+    │   │   │   ├── toaster.tsx
+    │   │   │   └── tooltip.tsx
+    │   │   ├── AnimatedLoadingScreen.tsx
+    │   │   ├── InteractiveMap.tsx
+    │   │   ├── IntroductionPage.tsx
+    │   │   ├── InvitationDisplay.tsx
+    │   │   ├── RSVPForm.tsx
+    │   │   ├── icons.ts
+    │   │   └── theme-provider.tsx
+    │   ├── hooks/
+    │   │   ├── use-countdown.tsx
+    │   │   ├── use-gallery.tsx
+    │   │   ├── use-hydration.tsx
+    │   │   ├── use-mobile.tsx
+    │   │   └── use-toast.ts
+    │   ├── lib/
+    │   │   ├── constants.ts
+    │   │   └── utils.ts
+    │   ├── services/
+    │   │   └── map.ts
+    │   └── styles/
+    │       ├── Confetti.css
+    │       ├── CountdownTimer.css
+    │       ├── DetailsSection.css
+    │       ├── PartySection.css
+    │       ├── gallery.css
+    │       ├── hero-section.css
+    │       ├── intro-section.css
+    │       └── loading-screen.css
+    ├── README.md
+    ├── components.json
+    ├── next-env.d.ts
+    ├── next.config.ts
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.js
+    ├── postcss.config.mjs
+    ├── proyecto1.py
+    ├── tailwind.config.ts
+    ├── tsconfig.json
+    ├── ui_contents.txt
+    └── uiver.py
+
+## Contenido de Archivos Clave
+
+### next.config.ts
+
+```javascript
+import type {NextConfig} from 'next';
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  env: {
+    GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+  },
+};
+
+export default nextConfig;
+
+```
+
+### package.json
+
+```json
+{
+  "name": "nextn",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack -p 9002",
+    "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
+    "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@genkit-ai/googleai": "^1.0.4",
+    "@genkit-ai/next": "^1.0.4",
+    "@hookform/resolvers": "^4.1.3",
+    "@radix-ui/react-accordion": "^1.2.3",
+    "@radix-ui/react-alert-dialog": "^1.1.6",
+    "@radix-ui/react-avatar": "^1.1.3",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-menubar": "^1.1.6",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-progress": "^1.1.2",
+    "@radix-ui/react-radio-group": "^1.2.3",
+    "@radix-ui/react-scroll-area": "^1.2.3",
+    "@radix-ui/react-select": "^2.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-slider": "^1.2.3",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-switch": "^1.1.3",
+    "@radix-ui/react-tabs": "^1.1.3",
+    "@radix-ui/react-toast": "^1.2.6",
+    "@radix-ui/react-tooltip": "^1.1.8",
+    "@tanstack-query-firebase/react": "^1.0.5",
+    "@tanstack/react-query": "^5.66.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "firebase": "^11.3.0",
+    "framer-motion": "^12.9.2",
+    "genkit": "^1.0.4",
+    "lucide-react": "^0.475.0",
+    "next": "^15.3.1",
+    "next-themes": "*",
+    "patch-package": "^8.0.0",
+    "react": "^18.3.1",
+    "react-day-picker": "^8.10.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.2",
+    "recharts": "^2.15.1",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.18",
+    "genkit-cli": "^1.0.4",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+```
+
+### tailwind.config.ts
+
+```javascript
+import type { Config } from "tailwindcss";
+
+export default {
+    darkMode: ["class"],
+    content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+  	extend: {
+  		colors: {
+  			base: {
+  				background: 'hsl(0, 0%, 100%)', // White
+  				foreground: 'hsl(240, 10%, 3.9%)' // Dark gray, almost black
+  			},
+  			card: {
+  				DEFAULT: 'hsl(0, 0%, 100%)', // White
+  				foreground: 'hsl(240, 10%, 3.9%)' // Dark gray, almost black
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(0, 0%, 100%)', // White
+  				foreground: 'hsl(240, 10%, 3.9%)' // Dark gray, almost black
+  			},
+  			primary: {
+  				DEFAULT: 'hsl(210, 60%, 60%)', // Un azul suave
+  				foreground: 'hsl(0, 0%, 100%)' // Blanco
+  			},
+  			secondary: {
+  				DEFAULT: 'hsl(16, 100%, 66%)', // Un coral
+  				foreground: 'hsl(240, 10%, 3.9%)' // Gris oscuro, casi negro
+  			},
+  			background: 'hsl(0, 0%, 95%)', // Gris claro
+  			foreground: 'hsl(210, 30%, 20%)', // Azul oscuro
+  			muted: {
+  				DEFAULT: 'hsl(0, 0%, 95%)', // A very light gray
+  				foreground: 'hsl(0, 0%, 45%)' // A medium gray
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(340, 80%, 60%)', // Un rosa coral
+  				foreground: 'hsl(0, 0%, 100%)' // Blanco
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(0, 85%, 60%)', // Un rojo saturado
+  				foreground: 'hsl(0, 0%, 100%)' // Blanco
+  			},
+  			border: 'hsl(0, 0%, 88%)', // Light gray
+  			input: 'hsl(0, 0%, 88%)', // Light gray
+  			ring: 'hsl(240, 10%, 3.9%)', // Dark gray, almost black
+  			chart: {
+  				'1': 'hsl(12, 76%, 61%)',
+  				'2': 'hsl(173, 58%, 39%)',
+  				'3': 'hsl(197, 37%, 24%)',
+  				'4': 'hsl(43, 74%, 66%)',
+  				'5': 'hsl(27, 87%, 67%)'
+  			},
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		}
+  	}
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+
+```
+
+### tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+```
+
+### .env
+
+```
+GOOGLE_GENAI_API_KEY=AIzaSyBewj-hqsLaGLRBY_c9dLsdL8YEZkop9OY
+```
+
+### src/app/layout.tsx
+
+```javascript
+import type {Metadata} from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import './globals.css';
+import ThemeProvider from '@/components/theme-provider';
+
+export const metadata: Metadata = {
+  // Optimized Title and Description for SEO in Spanish
+  title: '¡Primer Cumpleaños de Galia! | Invitación Digital',
+  description: '¡Estás invitado! Celebra con nosotros el primer año de aventuras de Galia. Confirma tu asistencia (RSVP) y encuentra todos los detalles aquí.',
+  // Added more relevant Spanish keywords
+  keywords: ['Galia', 'Primer Cumpleaños', 'Fiesta Infantil', 'Invitación Digital', 'Celebración 1 Año', 'RSVP Online', 'Evento Familiar', 'Juanico'],
+  // Open Graph Metadata optimized for Spanish
+  openGraph: {
+    title: '¡Te esperamos en el Primer Cumpleaños de Galia!',
+    description: 'Acompáñanos a celebrar el primer año de Galia. ¡Confirma tu asistencia y no te pierdas la fiesta!',
+    url: 'https://galiacumple.netlify.app/', // TODO: Replace with your actual production URL
+    siteName: 'Cumpleaños de Galia',
+    images: [
+      {
+        url: 'https://galiacumple.netlify.app/GaliaHero.svg', // TODO: Replace with an actual OG image URL
+        width: 1200,
+        height: 630,
+        alt: 'Invitación al Primer Cumpleaños de Galia',
+      },
+    ],
+    locale: 'es_UY', // Setting locale to Spanish (Uruguay)
+    type: 'website',
+  },
+  // Twitter Card Metadata optimized for Spanish
+  twitter: {
+    card: 'summary_large_image',
+    title: '¡Invitación al Primer Cumpleaños de Galia!',
+    description: 'Celebra con nosotros el primer año de Galia. ¡Confirma tu asistencia aquí!',
+    images: ['https://galiacumple.netlify.app/GaliaHero.svg'], // TODO: Replace with an actual Twitter image URL
+    creator: '@tu_twitter', // TODO: Replace with your Twitter handle if available
+  },
+  // Robots meta tags for search engines
+  robots: {
+    index: true, // Allow indexing
+    follow: true, // Allow following links
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  // Favicon configuration
+  icons: {
+    icon: '/favicon.svg', // Path to your favicon file
+    shortcut: '/favicon.svg',
+    apple: '/apple-touch-icon.png', // Optional: Add apple touch icon if you have one
+  },
+  // Other potentially useful meta tags
+  authors: [{ name: 'Nombre del Creador/Organizador' }], // TODO: Add author name
+  manifest: '/manifest.json', // Optional: Link to a web app manifest
+  metadataBase: new URL('https://galiacumple.netlify.app'), // TODO: Replace with your actual production URL
+  alternates: {
+    canonical: '/', // Canonical URL for the homepage
+  },
+};
+
+
+// Define Geist Sans font
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+});
+
+// Define Geist Mono font
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="es" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  );
+}
+
+```
+
+### src/app/globals.css
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    font-family: 'Baloo 2', Arial, Helvetica, sans-serif;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 124 39% 71%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 51 100% 50%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 180 100% 25%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 124 39% 71%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 51 100% 50%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 180 100% 25%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer utilities {
+  * {
+    border-color: var(--border);    
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+
+  }
+
+
+}
+
+    
+
+```
+
+### src/ai/ai-instance.ts
+
+```javascript
+import {genkit} from 'genkit';
+import {googleAI} from '@genkit-ai/googleai';
+
+export const ai = genkit({
+  promptDir: './prompts',
+  plugins: [
+    googleAI({
+      apiKey: process.env.GOOGLE_GENAI_API_KEY,
+    }),
+  ],
+  model: 'googleai/gemini-2.0-flash',
+});
+
+```
+
+### src/components/invitation/LoadingScreen.tsx
+
+```javascript
+"use client";
+
+import React, { useState, useEffect } from "react";
+import "@/styles/loading-screen.css";
+import { Confetti } from "@/components/animations/Confetti";
+
+interface BalloonStyle {
+  left: string;
+  width: string;
+  height: string;
+  duration: string;
+  delay: string;
+  color: string;
+}
+
+const balloonColors = [
+  '#73d1dd', // Light teal
+  '#ffb347', // Light orange
+  '#a7d1ab', // Pastel green
+  '#fce18a', // Light gold
+  '#ff726d', // Salmon
+  '#b48bce', // Lavender
+  '#f4306d', // Magenta
+  '#5bca94', // Mint
+];
+
+const getRandomBalloonColor = () => {
+  return balloonColors[Math.floor(Math.random() * balloonColors.length)];
+};
+
+export const LoadingScreen: React.FC = () => {
+  const [progress, setProgress] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [balloons, setBalloons] = useState<BalloonStyle[]>([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prevProgress) => {
+        const newProgress = prevProgress + 5;
+        return newProgress >= 100 ? 100 : newProgress;
+      });
+    }, 100);
+
+    if (progress >= 100) {
+      clearInterval(interval);
+      setTimeout(() => setLoading(false), 800);
+    }
+
+    return () => clearInterval(interval);
+  }, [progress]);
+
+  useEffect(() => {
+    const generateBalloons = () => {
+      const newBalloons: BalloonStyle[] = [];
+      for (let i = 0; i < 10; i++) {
+        const color = getRandomBalloonColor();
+        newBalloons.push({
+          left: `${Math.random() * 100}%`,
+          width: `${Math.random() * 50 + 30}px`,
+          height: `${Math.random() * 70 + 50}px`,
+          duration: `${Math.random() * 5 + 5}s`,
+          delay: `${Math.random()}s`,
+          color: color,
+        });
+      }
+      setBalloons(newBalloons);
+    };
+
+    generateBalloons();
+  }, []);
+
+  return (
+    <div className={`loader-container ${loading ? "" : "loader-exit"}`}>
+      <div className="loader-background"></div>
+      <Confetti numberOfConfetti={70}/>
+      <div className="balloon-container">
+        {balloons.map((style, index) => (
+          <div
+            key={index}
+            className="balloon"
+            style={{
+              left: style.left,
+              width: style.width,
+              height: style.height,
+              animationDuration: style.duration,
+              animationDelay: style.delay,
+              backgroundColor: style.color,
+            } as React.CSSProperties}
+          >
+            <div className="balloon-string"></div>
+          </div>
+        ))}
+      </div>
+      <div className="loader-content">
+        <div className="loader-image-container">
+          <img
+            src="/margarita.gif"
+            alt="Daisy Flower"
+            className="loader-image"
+          />
+        </div>
+        <h1 className="loader-title">Cumple Galia</h1>
+        <h2 className="loader-subtitle">Cargando Invitacion</h2>
+        <div className="loader-progress-container">
+          <div className="loader-progress">
+            <div
+              className="loader-progress-bar"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+          <p className="loader-progress-text">{progress}%</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+```
+
+### src/components/invitation/IntroSection.tsx
+
+```javascript
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Gallery } from "@/components/invitation/Gallery";
+import { motion } from "framer-motion";
+import "@/styles/intro-section.css";
+
+interface IntroSectionProps {
+  onProceed: () => void;
+}
+
+const images = [
+  {
+    src: "/GaliaFoto.png",
+    caption: "Mi primer añito",
+  },
+  {
+    src: "/galia/galiahamaca.webp",
+    caption: "Momentos especiales",
+  },
+  {
+    src: "/galia/galiamaurogime.webp",
+    caption: "Sonrisas de Galia",
+  },
+  {
+    src: "/galia/galiamaurogimeauto.webp",
+    caption: "Celebrando juntos",
+  },
+];
+
+export const IntroSection: React.FC<IntroSectionProps> = ({ onProceed }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Añadir un pequeño retraso para la animación de entrada
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="intro-section">
+      {/* Animaciones de fondo mejoradas */}
+      <div className="background-animation">
+        <img src="/img/daisy.png" alt="Margarita" className="daisy daisy-1 floating" />
+        <img
+          src="/img/balloon2.jpg"
+          alt="Globo"
+          className="balloon balloon-1 floating-slow"
+        />
+        <img
+          src="/img/balloon2.jpg"
+          alt="Globo"
+          className="balloon balloon-2 floating-medium"
+        />
+        <img
+          src="/img/balloon1.svg"
+          alt="Globo"
+          className="balloon balloon-3 floating-fast"
+        />
+        <img src="/img/daisy.png" alt="Margarita" className="daisy daisy-2 floating-reverse" />
+        
+        {/* Elementos decorativos adicionales */}
+        <div className="confetti confetti-1"></div>
+        <div className="confetti confetti-2"></div>
+        <div className="confetti confetti-3"></div>
+        <div className="confetti confetti-4"></div>
+      </div>
+
+      {/* Contenido principal con animaciones */}
+      <motion.div 
+        className="intro-content"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.header 
+          className="intro-header"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -20 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
+          <h1 className="intro-title">
+            ¡Celebra conmigo!
+          </h1>
+          <motion.div 
+            className="badge"
+            initial={{ scale: 0 }}
+            animate={{ scale: isVisible ? 1 : 0 }}
+            transition={{ duration: 0.5, delay: 0.6, type: "spring", stiffness: 200 }}
+          >
+            1 añito
+          </motion.div>
+        </motion.header>
+        
+        <motion.p 
+          className="intro-description"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isVisible ? 1 : 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+        >
+          Galia está cumpliendo su primer añito y quiere compartir este día tan
+          especial contigo
+        </motion.p>
+
+        {/* Galería con animación de entrada */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.95 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        >
+          <Gallery images={images} />
+        </motion.div>
+
+        {/* Botón con animación de entrada y efectos de hover mejorados */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          className="button-container"
+        >
+          <Button
+            onClick={onProceed}
+            className="proceed-button"
+          >
+            Entrar a la invitación
+          </Button>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+};
+
+```
+
+### src/components/invitation/HeroSection.tsx
+
+```javascript
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion'; // Import framer-motion
+import '@/styles/hero-section.css'; // Ensure this CSS file exists and is styled
+import { Card, CardContent } from '@/components/ui/card'; // Ensure Card and CardContent are imported
+import { MapPin, Calendar } from 'lucide-react'; // Import icons
+import { CountdownTimer } from "@/components/invitation/CountdownTimer";
+import { CONSTANTS } from "@/lib/constants";
+
+export const HeroSection: React.FC = () => {
+  const backgroundRef = useRef<HTMLDivElement>(null);
+  const [eventInProgress, setEventInProgress] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (backgroundRef.current) {
+        const scrollPosition = window.pageYOffset;
+        // Adjust the parallax effect speed (e.g., 0.3)
+        backgroundRef.current.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Check if the event is in progress
+    const now = new Date();
+    if (now >= CONSTANTS.eventDate) {
+      setEventInProgress(true);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToDetails = () => {
+    const detailsSection = document.getElementById('details-section');
+    if (detailsSection) {
+      detailsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Animation variants
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+  return (
+    <section className="hero" data-target="countdown-section">
+      {/* Parallax background image */}
+      <div className="hero__background" ref={backgroundRef}>
+        <img
+          alt="Imagen de fondo con efecto parallax"
+          src="/fondoback.gif" // Ensure this image exists in public folder
+          id="parallax-hero"
+          loading="lazy" // Lazy load background image
+        />
+      </div>
+       {/* Apply animation variant to the Card */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={cardVariants}
+        className="w-full max-w-xl" // Constrain card width
+      >
+          <Card className="hero__card"> {/* Use ShadCN Card */}
+            <CardContent className="flex flex-col items-center p-6 md:p-8"> {/* Use CardContent and responsive padding */}
+              {/* Animated image of Galia */}
+              <motion.img
+                variants={itemVariants}
+                alt="Imagen animada de Galia"
+                src="/GaliaHero1.gif" // Ensure this image exists
+                className="hero__animated-image mb-6 w-24 h-24 md:w-32 md:h-32" // Adjust size and margin
+                loading="lazy"
+              />
+              <div className="hero__info text-center"> {/* Centered text */}
+                {/* Greeting text */}
+                <motion.p variants={itemVariants} className="hero__greeting text-lg md:text-xl text-muted-foreground mb-2">¡Acompáñame a celebrar!</motion.p>
+                {/* Main celebration title */}
+                <motion.h1 variants={itemVariants} className="hero__celebration text-4xl md:text-5xl font-bold mb-2">
+                  Mi <span className="hero__age text-secondary">Primer Añito</span>
+                </motion.h1>
+                {/* Name */}
+                <motion.p variants={itemVariants} className="hero__name text-2xl md:text-3xl text-foreground mb-6">Soy Galia</motion.p>
+                {/* Event location details */}
+                 <motion.p variants={itemVariants} className="hero__event-details flex items-center justify-center gap-2 text-muted-foreground mb-2 text-sm md:text-base">
+                  <MapPin className="hero__icon hero__icon--location w-4 h-4 md:w-5 md:h-5 text-primary" /> {/* Lucide icon */}
+                  Club Ciclista Juanico
+                </motion.p>
+                {/* Event date and time details */}
+                <motion.p variants={itemVariants} className="hero__event-details flex items-center justify-center gap-2 text-muted-foreground mb-6 text-sm md:text-base">
+                  <Calendar className="hero__icon hero__icon--time w-4 h-4 md:w-5 md:h-5 text-primary" /> {/* Lucide icon */}
+                  10 de Mayo de 2025 | 13:00
+                </motion.p>
+
+                {/* Conditionally render Countdown Timer or event in progress message */}
+                <motion.div variants={itemVariants} className="mb-6">
+                  {!eventInProgress ? (
+                    <CountdownTimer eventDate={CONSTANTS.eventDate} />
+                  ) : (
+                    <p className="hero__event-in-progress text-xl font-semibold text-green-600 my-4">¡El evento está en curso!</p>
+                  )}
+                </motion.div>
+
+                {/* Invitation text */}
+                <motion.div variants={itemVariants} className="hero__invitation mt-4">
+                  <p className="hero__invitation-text text-foreground italic text-base md:text-lg">
+                    ¡Tu presencia hará este día aún más especial!
+                  </p>
+                </motion.div>
+              </div>
+               {/* Scroll indicator */}
+                <motion.div
+                  variants={itemVariants}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0, transition: { delay: 0.5, duration: 0.6 } }} // Delayed animation for indicator
+                  className="hero__scroll-indicator flex flex-col items-center gap-2 cursor-pointer mt-8" onClick={scrollToDetails}>
+                     <span className="hero__scroll-text text-sm md:text-base text-primary font-medium">Desliza para ver más</span>
+                     <motion.img
+                        src="/arrow_down.gif"
+                        alt="Desliza hacia abajo"
+                        className="hero__scroll-arrow w-8 h-auto md:w-10" // Responsive arrow size
+                        animate={{ y: [0, 8, 0] }} // Bounce animation
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                     />
+                </motion.div>
+            </CardContent>
+          </Card>
+        </motion.div>
+    </section>
+  );
+};
+
+```
+
+### src/components/invitation/DetailsSection.tsx
+
+```javascript
+"use client";
+
+import React from "react";
+import "@/styles/DetailsSection.css";
+import { ConfirmacionModal } from "@/components/invitation/ConfirmacionModal";
+import { CalendarDays, MapPin } from "lucide-react"; // Import Lucide icons
+
+export const DetailsSection: React.FC = () => {
+  return (
+    <>
+      <div className="principal-date-container" id="details-section">
+        <div className="flower-decoration">
+          <img src="/daisy.svg" className="flower-icon" alt="icono margarita" />
+        </div>
+
+        <div className="title-container">
+          {/* Updated heading style */}
+          <h2 className="text-center text-5xl md:text-6xl font-['Parisienne',_cursive] text-primary">
+            Mi Fiesta
+          </h2>
+        </div>
+
+        <div className="info-grid">
+          {/* Card 1: When */}
+          <div className="info-card">
+            <div className="info-card-inner">
+              <p className="info-label">Cuándo</p>
+              <span className="info-value"> Sábado 10 de mayo de 2025 - 13:00 hs </span>
+              <a
+                href="https://calendar.app.google/ursVLnsMBwkJSUVs8"
+                target="_blank"
+                className="action-button" // Simplified class, styling via CSS
+                rel="noopener noreferrer"
+              >
+                <CalendarDays className="button-icon" /> {/* Lucide Icon */}
+                <span className="button-text">Agendar</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Card 2: Where */}
+          <div className="info-card">
+            <div className="info-card-inner">
+              <p className="info-label">Dónde</p>
+              <span className="info-value"> Club Ciclista Juanico, Calle San Marcos </span>
+              <a
+                href="https://maps.app.goo.gl/nB1U1MJTKiEXN33A6"
+                target="_blank"
+                className="action-button" // Simplified class, styling via CSS
+                rel="noopener noreferrer"
+              >
+                <MapPin className="button-icon" /> {/* Lucide Icon */}
+                <span className="button-text">¿Cómo llegar?</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Card 3: Confirm Assistance */}
+          <div className="info-card">
+            <div className="info-card-inner">
+              <p className="info-label">Confirma asistencia</p>
+              <span className="info-value"> Me gustaría que confirmes tu asistencia </span>
+              <div className="modal-wrapper">
+                {/* Pass confirm function directly */}
+                <ConfirmacionModal onConfirm={(name, quantity) => {
+                   console.log(`Confirmado: Nombre: ${name}, Cantidad: ${quantity}`);
+                }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+```
+
+### src/components/invitation/BotonFlotanteRegalos.tsx
+
+```javascript
+import { useState } from "react";
+import { Gift } from "lucide-react";
+import ModalGalia from "./ModalGalia";
+
+export default function BotonFlotanteRegalos() {
+  const [abierto, setAbierto] = useState(false);
+  const [mostrarModal, setMostrarModal] = useState(false);
+
+  return (
+    <>
+      <div
+        className={`fixed bottom-4 left-4 z-50 flex items-center space-x-2 
+        transition-all duration-500 group cursor-pointer animate-bounce hover:animate-none`}
+        onMouseEnter={() => setAbierto(true)}
+        onMouseLeave={() => setAbierto(false)}
+        onClick={() => setMostrarModal(true)}
+      >
+        <div className="bg-pink-500 hover:bg-pink-600 text-white p-4 rounded-full shadow-lg transition-transform duration-300 hover:scale-110">
+          <Gift size={24} />
+        </div>
+        <span
+          className={`${
+            abierto ? "opacity-100 ml-2" : "opacity-0 ml-0"
+          } bg-white text-black text-sm px-3 py-1 rounded-lg shadow transition-all duration-500 transform hover:scale-105`}
+        >
+          Datos Sobre Mí
+        </span>
+      </div>
+
+      {mostrarModal && (
+        <ModalGalia cerrar={() => setMostrarModal(false)} />
+      )}
+    </>
+  );
+}
+
+```
+
+### src/components/invitation/BotonFlotanteMensajes.tsx
+
+```javascript
+"use client";
+
+import React, { useState } from "react";
+import { MessageSquare } from "lucide-react"; // Correct icon as per existing code
+import MensajeModal from "./MensajeModal"; // Import the modal component
+import { Button } from "@/components/ui/button"; // Import Shadcn Button
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"; // Import Tooltip components
+
+export default function BotonFlotanteMensajes() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
+  return (
+    <>
+      <TooltipProvider delayDuration={100}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="default" // Use Shadcn button styling
+              size="icon"
+              className="fixed bottom-4 right-4 z-50 rounded-full shadow-lg w-14 h-14 bg-accent hover:bg-accent/90 text-accent-foreground animate-bounce" // Added bounce animation
+              onClick={handleOpenModal}
+              aria-label="Dejar un mensaje"
+            >
+              <MessageSquare size={24} />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent side="left" sideOffset={5}>
+            <p>Dejar un Mensaje</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+
+      <MensajeModal isOpen={isModalOpen} onClose={handleCloseModal} />
+    </>
+  );
+}
+
+```
+

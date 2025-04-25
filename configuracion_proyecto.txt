@@ -1,0 +1,278 @@
+# Análisis de Configuración del Proyecto 'Galia's First Adventure'
+
+## next.config.ts
+
+```
+import type {NextConfig} from 'next';
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  env: {
+    GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+  },
+};
+
+export default nextConfig;
+
+```
+
+## package.json
+
+```
+{
+  "name": "nextn",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack -p 9002",
+    "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
+    "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@genkit-ai/googleai": "^1.0.4",
+    "@genkit-ai/next": "^1.0.4",
+    "@hookform/resolvers": "^4.1.3",
+    "@radix-ui/react-accordion": "^1.2.3",
+    "@radix-ui/react-alert-dialog": "^1.1.6",
+    "@radix-ui/react-avatar": "^1.1.3",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-menubar": "^1.1.6",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-progress": "^1.1.2",
+    "@radix-ui/react-radio-group": "^1.2.3",
+    "@radix-ui/react-scroll-area": "^1.2.3",
+    "@radix-ui/react-select": "^2.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-slider": "^1.2.3",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-switch": "^1.1.3",
+    "@radix-ui/react-tabs": "^1.1.3",
+    "@radix-ui/react-toast": "^1.2.6",
+    "@radix-ui/react-tooltip": "^1.1.8",
+    "@tanstack-query-firebase/react": "^1.0.5",
+    "@tanstack/react-query": "^5.66.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "firebase": "^11.3.0",
+    "framer-motion": "^12.9.2",
+    "genkit": "^1.0.4",
+    "lucide-react": "^0.475.0",
+    "next": "^15.3.1",
+    "next-themes": "*",
+    "patch-package": "^8.0.0",
+    "react": "^18.3.1",
+    "react-day-picker": "^8.10.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.2",
+    "recharts": "^2.15.1",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.18",
+    "genkit-cli": "^1.0.4",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+```
+
+## tailwind.config.ts
+
+```
+import type { Config } from "tailwindcss";
+
+export default {
+    darkMode: ["class"],
+    content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+  	extend: {
+  		colors: {
+  			base: {
+  				background: 'hsl(0, 0%, 100%)', // White
+  				foreground: 'hsl(240, 10%, 3.9%)' // Dark gray, almost black
+  			},
+  			card: {
+  				DEFAULT: 'hsl(0, 0%, 100%)', // White
+  				foreground: 'hsl(240, 10%, 3.9%)' // Dark gray, almost black
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(0, 0%, 100%)', // White
+  				foreground: 'hsl(240, 10%, 3.9%)' // Dark gray, almost black
+  			},
+  			primary: {
+  				DEFAULT: 'hsl(210, 60%, 60%)', // Un azul suave
+  				foreground: 'hsl(0, 0%, 100%)' // Blanco
+  			},
+  			secondary: {
+  				DEFAULT: 'hsl(16, 100%, 66%)', // Un coral
+  				foreground: 'hsl(240, 10%, 3.9%)' // Gris oscuro, casi negro
+  			},
+  			background: 'hsl(0, 0%, 95%)', // Gris claro
+  			foreground: 'hsl(210, 30%, 20%)', // Azul oscuro
+  			muted: {
+  				DEFAULT: 'hsl(0, 0%, 95%)', // A very light gray
+  				foreground: 'hsl(0, 0%, 45%)' // A medium gray
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(340, 80%, 60%)', // Un rosa coral
+  				foreground: 'hsl(0, 0%, 100%)' // Blanco
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(0, 85%, 60%)', // Un rojo saturado
+  				foreground: 'hsl(0, 0%, 100%)' // Blanco
+  			},
+  			border: 'hsl(0, 0%, 88%)', // Light gray
+  			input: 'hsl(0, 0%, 88%)', // Light gray
+  			ring: 'hsl(240, 10%, 3.9%)', // Dark gray, almost black
+  			chart: {
+  				'1': 'hsl(12, 76%, 61%)',
+  				'2': 'hsl(173, 58%, 39%)',
+  				'3': 'hsl(197, 37%, 24%)',
+  				'4': 'hsl(43, 74%, 66%)',
+  				'5': 'hsl(27, 87%, 67%)'
+  			},
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		}
+  	}
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+
+```
+
+## tsconfig.json
+
+```
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+```
+
+## .env
+
+```
+GOOGLE_GENAI_API_KEY=AIzaSyBewj-hqsLaGLRBY_c9dLsdL8YEZkop9OY
+```
+
+## .gitignore
+
+```
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+.genkit/*
+
+```
+
