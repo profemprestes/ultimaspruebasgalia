@@ -9,7 +9,8 @@ import { MapLocation } from "@/components/invitation/MapLocation";
 import { RsvpForm } from "@/components/invitation/RsvpForm";
 import { ThankYouGenerator } from "@/components/invitation/ThankYouGenerator";
 import { CONSTANTS } from "@/lib/constants";
-import PartySection from "@/components/invitation/PartySection";
+// Removed PartySection import
+
 // Removed ClientOnly import as the component itself manages client-side state
 
 export default function Home() {
@@ -42,7 +43,7 @@ export default function Home() {
         <>
           <HeroSection />
           <DetailsSection />
-          <PartySection />
+          {/* Removed PartySection component */}
           {/* Consider adding MapLocation, RsvpForm, ThankYouGenerator here if needed */}
         </>
       ) : null}
