@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '¡Primer Cumpleaños de Galia!',
     description: 'Acompáñanos a celebrar el primer año de aventuras de Galia. ¡RSVP aquí!',
-    url: 'https://galiacumple.netlify.app/, // Replace with your actual URL
+    url: 'https://ultimaspruebasgalia.netlify.app/', // Replace with your actual URL
     siteName: 'Galia\'s Birthday',
     images: [
       {
