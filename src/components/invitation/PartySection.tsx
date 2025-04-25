@@ -2,7 +2,6 @@
 
 import React from 'react';
 import '@/styles/PartySection.css';
-import Sobremimodal from '@/components/invitation/Sobremimodal';
 
 const PartySection: React.FC = () => {
   return (
@@ -50,9 +49,6 @@ const PartySection: React.FC = () => {
               <div className="party-card-description slideUp">
                 ¿Quieres conocer un poco más sobre mí? ¡Descubre mis gustos y lo
                 que me hace feliz!
-              </div>
-              <div className="button-wrapper fadeInUp">
-                <Sobremimodal buttonText="Conocer más" buttonClassName="about-button" />
               </div>
             </div>
           </div>

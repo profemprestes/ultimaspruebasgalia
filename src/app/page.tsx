@@ -5,11 +5,7 @@ import { LoadingScreen } from "@/components/invitation/LoadingScreen";
 import { IntroSection } from "@/components/invitation/IntroSection";
 import { HeroSection } from "@/components/invitation/HeroSection";
 import { DetailsSection } from "@/components/invitation/DetailsSection";
-// Removed MapLocation, RsvpForm, ThankYouGenerator as they are not currently used
-import { CONSTANTS } from "@/lib/constants";
-// import PartySection from "@/components/invitation/PartySection"; // Already removed
 import BotonFlotanteRegalos from "@/components/invitation/BotonFlotanteRegalos";
-import BotonFlotanteMensajes from "@/components/invitation/BotonFlotanteMensajes";
 import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
@@ -50,7 +46,6 @@ export default function Home() {
         </main>
         {/* Floating buttons and Toaster are part of the main invitation view */}
         <BotonFlotanteRegalos />
-        <BotonFlotanteMensajes />
         <Toaster />
       </div>
     );

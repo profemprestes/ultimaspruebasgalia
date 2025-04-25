@@ -1,11 +1,15 @@
 .countdown-timer {
   display: flex;
   justify-content: space-around;
-  align-items: center; /* Align items vertically */
+  align-items: center;
   margin-top: 20px;
-  padding: 10px;
-  border-radius: 8px;
-  width: 100%; /* Make the timer occupy full width */
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .countdown-timer > div {
@@ -13,13 +17,23 @@
   padding: 10px;
   border-radius: 5px;
   flex: 1; /* Distribute space evenly */
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.countdown-timer > div:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .countdown-timer > div span {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
+  color: hsl(var(--primary));
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .countdown-timer > div p {
@@ -41,7 +55,7 @@
   width: 100%;
   height: 100%;
   line-height: 2.0rem; /* Match font-size */
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s ease;
 }
 
 .countdown-number span.slide-up {

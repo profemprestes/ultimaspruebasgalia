@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   background-color: hsl(var(--background)/ 0.8); /* Use background color with some transparency */
-  background-image: var(--hero-background-url, url('/herogalia.gif')); /* Default background image */
+  background-image: var(--hero-background-url, url('/fondoback.gif')); /* Default background image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,24 +38,38 @@
 
 /* Main card styles */
 .hero__card {
-  background: hsla(var(--card) / 0.9); /* Card background with transparency */
-  border-radius: var(--radius-lg); /* Use theme radius */
-  padding: clamp(20px, 5vw, 40px); /* Responsive padding */
+  background: hsla(var(--card) / 0.95); /* Slightly more opaque background */
+  border-radius: var(--radius-xl); /* Larger border radius */
+  padding: clamp(20px, 5vw, 40px);
   text-align: center;
-  box-shadow: var(--shadow-lg); /* Use theme shadow */
-  max-width: 90%; /* Limit width */
-  width: fit-content; /* Adjust width to content */
-  margin: 20px; /* Add margin */
-  border: 1px solid hsl(var(--border)); /* Subtle border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Softer, more diffused shadow */
+  max-width: 90%;
+  width: fit-content;
+  margin: 20px;
+  border: 1px solid hsl(var(--border));
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px); /* Frosted glass effect */
+}
+
+.hero__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Animated image specific styles */
 .hero__animated-image {
   max-width: 150px;
   height: auto;
-  margin: 0 auto 1.5rem auto; /* Center image and add bottom margin */
+  margin: 0 auto 1.5rem auto;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.hero__animated-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Info container inside the card */
@@ -81,8 +95,15 @@
 
 /* Style for the "Primer Añito" part */
 .hero__age {
-  font-weight: 700; /* Make it bold */
-  color: hsl(var(--secondary)); /* Use secondary color */
+  font-weight: 700;
+  color: hsl(var(--secondary));
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.hero__age:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 4px 8px hsla(var(--secondary) / 0.3);
 }
 
 /* Name text styles */
@@ -127,21 +148,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.3rem; /* Space between text and arrow */
+  gap: 0.5rem; /* Increased space between text and arrow */
   cursor: pointer;
-  color: hsl(var(--primary)); /* Use primary color */
-  margin-top: 2rem; /* Space above scroll indicator */
+  color: hsl(var(--primary)); 
+  margin-top: 2.5rem; /* More space above */
+  transition: all 0.3s ease;
+}
+
+.hero__scroll-indicator:hover {
+  transform: translateY(5px); /* Subtle hover effect */
 }
 
 .hero__scroll-text {
-  font-size: clamp(0.8rem, 2vw, 0.9rem); /* Responsive font size */
+  font-size: clamp(1rem, 2.5vw, 1.2rem); /* Larger font size */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Scroll arrow styles */
 .hero__scroll-arrow {
-   width: clamp(25px, 6vw, 35px); /* Responsive arrow size */
+   width: clamp(30px, 7vw, 45px);
    height: auto;
-   animation: bounceUpDown 1.5s infinite ease-in-out; /* Vertical bounce animation */
+   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+   animation: bounceUpDown 1.5s infinite ease-in-out, pulse 2s infinite ease-in-out;
 }
 
 
@@ -161,7 +191,16 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(10px); /* Adjust bounce height */
+    transform: translateY(10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
   }
 }
 

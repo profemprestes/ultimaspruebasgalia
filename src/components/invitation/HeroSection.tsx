@@ -45,7 +45,7 @@ export const HeroSection: React.FC = () => {
         {/* Parallax background image */}
         <img
           alt="Imagen de fondo con efecto parallax"
-          src="/herogalia.gif"
+          src="/fondoback.gif"
           id="parallax-hero"
         />
       </div>

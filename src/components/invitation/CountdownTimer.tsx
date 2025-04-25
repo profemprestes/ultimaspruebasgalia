@@ -43,20 +43,28 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
 
   return (
     <div className="countdown-timer">
-      <div>
-        <span className="countdown-number">{timeRemaining.days}</span>
+      <div data-unit="days">
+        <span className="countdown-number">
+          <span className="current">{timeRemaining.days}</span>
+        </span>
         <p>Dias</p>
       </div>
-      <div>
-        <span className="countdown-number">{timeRemaining.hours}</span>
+      <div data-unit="hours">
+        <span className="countdown-number">
+          <span className="current">{timeRemaining.hours}</span>
+        </span>
         <p>Horas</p>
       </div>
-      <div>
-        <span className="countdown-number">{timeRemaining.minutes}</span>
+      <div data-unit="minutes">
+        <span className="countdown-number">
+          <span className="current">{timeRemaining.minutes}</span>
+        </span>
         <p>Minutos</p>
       </div>
-      <div>
-        <span className="countdown-number">{timeRemaining.seconds}</span>
+      <div data-unit="seconds">
+        <span className="countdown-number">
+          <span className="current">{timeRemaining.seconds}</span>
+        </span>
         <p>Segundos</p>
       </div>
     </div>

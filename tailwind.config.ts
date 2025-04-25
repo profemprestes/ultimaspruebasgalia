@@ -21,24 +21,26 @@ export default {
   				foreground: 'hsl(240, 10%, 3.9%)' // Dark gray, almost black
   			},
   			primary: {
-  				DEFAULT: 'hsl(124, 70%, 50%)', // A vibrant green
-  				foreground: 'hsl(0, 0%, 100%)' // White
+  				DEFAULT: 'hsl(210, 60%, 60%)', // Un azul suave
+  				foreground: 'hsl(0, 0%, 100%)' // Blanco
   			},
   			secondary: {
-  				DEFAULT: 'hsl(51, 100%, 50%)', // A bright yellow
-  				foreground: 'hsl(240, 10%, 3.9%)' // Dark gray, almost black
+  				DEFAULT: 'hsl(16, 100%, 66%)', // Un coral
+  				foreground: 'hsl(240, 10%, 3.9%)' // Gris oscuro, casi negro
   			},
+  			background: 'hsl(0, 0%, 95%)', // Gris claro
+  			foreground: 'hsl(210, 30%, 20%)', // Azul oscuro
   			muted: {
   				DEFAULT: 'hsl(0, 0%, 95%)', // A very light gray
   				foreground: 'hsl(0, 0%, 45%)' // A medium gray
   			},
   			accent: {
-  				DEFAULT: 'hsl(180, 100%, 35%)', // A teal
-  				foreground: 'hsl(0, 0%, 100%)' // White
+  				DEFAULT: 'hsl(340, 80%, 60%)', // Un rosa coral
+  				foreground: 'hsl(0, 0%, 100%)' // Blanco
   			},
   			destructive: {
-  				DEFAULT: 'hsl(0, 85%, 60%)', // A saturated red
-  				foreground: 'hsl(0, 0%, 100%)' // White
+  				DEFAULT: 'hsl(0, 85%, 60%)', // Un rojo saturado
+  				foreground: 'hsl(0, 0%, 100%)' // Blanco
   			},
   			border: 'hsl(0, 0%, 88%)', // Light gray
   			input: 'hsl(0, 0%, 88%)', // Light gray

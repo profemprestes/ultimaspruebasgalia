@@ -1,22 +1,35 @@
 .principal-date-container {
   width: 100%;
-  padding: 40px 20px; /* Increased padding */
+  padding: 40px 20px;
   box-sizing: border-box;
-  /* Updated subtle gradient background using theme colors */
   background: linear-gradient(135deg, hsl(var(--primary)/0.1), hsl(var(--secondary)/0.1));
   border-radius: 15px;
-  margin-top: 2rem; /* Add some space from Hero section */
+  margin-top: 2rem;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .flower-decoration {
   text-align: center;
   margin-bottom: 20px;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
 .flower-icon {
   width: 50px;
   height: auto;
   opacity: 0.7;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.flower-decoration:hover .flower-icon {
+  transform: rotate(15deg) scale(1.1);
+  opacity: 0.9;
 }
 
 .title-container {
@@ -33,16 +46,18 @@
 }
 
 .info-card {
-  background-color: hsl(var(--card)); /* Use card background color */
-  border-radius: var(--radius-lg); /* Use theme radius */
-  box-shadow: var(--shadow-md); /* Use theme shadow */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  border: 1px solid hsl(var(--border)); /* Add subtle border */
+  background-color: hsl(var(--card));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid hsl(var(--border));
+  transform-origin: center;
+  will-change: transform, box-shadow;
 }
 
 .info-card:hover {
-  transform: translateY(-5px); /* Subtle lift effect */
-  box-shadow: var(--shadow-lg); /* Increase shadow on hover */
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-xl);
 }
 
 .info-card-inner {
@@ -76,24 +91,26 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px; /* Increased padding */
-  border-radius: var(--radius-md); /* Use theme radius */
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
   text-decoration: none;
   color: hsl(var(--primary-foreground));
   background-color: hsl(var(--primary));
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  border: none; /* Remove default border */
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: none;
   font-weight: 500;
-  margin-top: auto; /* Push button to bottom */
+  margin-top: auto;
+  will-change: transform, background-color;
 }
 
 .action-button:hover {
-  background-color: hsl(var(--primary) / 0.9); /* Slightly darken on hover */
-  transform: scale(1.03); /* Slight scale effect */
+  background-color: hsl(var(--primary) / 0.85);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px hsl(var(--primary)/0.2);
 }
 
 .action-button:active {
-    transform: scale(0.98); /* Slight shrink effect on click */
+  transform: scale(0.96);
 }
 
 
@@ -113,29 +130,53 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .principal-date-container {
-    padding: 30px 15px; /* Adjust padding */
+    padding: 25px 15px;
+    margin-top: 1.5rem;
   }
   .info-grid {
-    grid-template-columns: 1fr; /* Stack items on smaller screens */
-    gap: 20px; /* Reduce gap */
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
   .info-card {
-    margin-bottom: 15px; /* Add spacing between cards */
+    margin-bottom: 12px;
   }
   .info-label {
     font-size: 1rem;
   }
   .info-value {
-    font-size: 0.95rem; /* Adjust font size for smaller screens */
-    margin-bottom: 20px;
+    font-size: 0.95rem;
+    margin-bottom: 18px;
   }
-   .action-button {
-    padding: 10px 20px; /* Adjust padding */
+  .action-button {
+    padding: 10px 18px;
     font-size: 0.95rem;
   }
   .button-icon {
     width: 16px;
     height: 16px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -145,10 +186,10 @@
         padding: 25px 10px;
     }
    .title-container h2 {
-       font-size: 3.5rem; /* Adjust title size */
+       font-size: 3.5rem;
    }
   .info-value {
-    font-size: 0.9rem; /* Further reduce font size */
+    font-size: 0.9rem;
   }
   .action-button {
     padding: 8px 16px;
