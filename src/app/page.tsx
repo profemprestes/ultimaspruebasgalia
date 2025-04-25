@@ -11,7 +11,8 @@ import { ThankYouGenerator } from "@/components/invitation/ThankYouGenerator";
 import { CONSTANTS } from "@/lib/constants";
 // import PartySection from "@/components/invitation/PartySection"; // Removed as per previous request
 import BotonFlotanteRegalos from "@/components/invitation/BotonFlotanteRegalos"; // Import the floating button
-
+import BotonFlotanteMensajes from "@/components/invitation/BotonFlotanteMensajes"; // Import the new floating button
+import { Toaster } from "@/components/ui/toaster"; // Import Toaster for notifications
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,7 +49,9 @@ export default function Home() {
             {/* <RsvpForm /> */}
             {/* <ThankYouGenerator /> */}
           </main>
-          <BotonFlotanteRegalos /> {/* Render the floating button */}
+          <BotonFlotanteRegalos /> {/* Render the gifts floating button */}
+          <BotonFlotanteMensajes /> {/* Render the messages floating button */}
+          <Toaster /> {/* Add Toaster for displaying notifications */}
         </>
       ) : null}
     </div>
