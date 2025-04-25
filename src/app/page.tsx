@@ -9,21 +9,20 @@ import { MapLocation } from "@/components/invitation/MapLocation";
 import { RsvpForm } from "@/components/invitation/RsvpForm";
 import { ThankYouGenerator } from "@/components/invitation/ThankYouGenerator";
 import { CONSTANTS } from "@/lib/constants";
-import { useHydration } from "@/hooks/use-hydration";
 import PartySection from "@/components/invitation/PartySection";
+import { ClientOnly } from "@/components/ClientOnly"; // Import ClientOnly
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [showIntro, setShowIntro] = useState(false);
   const [showInvitation, setShowInvitation] = useState(false);
-  const isHydrated = useHydration();
 
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
       setShowIntro(true);
-    }, 2000);
+    }, 2000); // Adjust loading time as needed
     return () => clearTimeout(timer);
   }, []);
 
@@ -34,19 +33,20 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      {isLoading ? (
-        <LoadingScreen />
-      ) : showIntro ? (
-        <IntroSection onProceed={handleProceedToInvitation} />
-      ) : showInvitation ? (
-        <>
-          {isHydrated ? <HeroSection /> : null}
-          {isHydrated ? <DetailsSection /> : null}
-		      {isHydrated ? <PartySection /> : null}
-        </>
-      ) : null}
+      <ClientOnly> {/* Wrap the dynamic content */}
+        {isLoading ? (
+          <LoadingScreen />
+        ) : showIntro ? (
+          <IntroSection onProceed={handleProceedToInvitation} />
+        ) : showInvitation ? (
+          <>
+            <HeroSection />
+            <DetailsSection />
+            <PartySection />
+            {/* Consider adding MapLocation, RsvpForm, ThankYouGenerator here if needed */}
+          </>
+        ) : null}
+      </ClientOnly>
     </div>
   );
 }
-
-
