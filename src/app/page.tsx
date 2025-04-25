@@ -12,7 +12,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [showIntro, setShowIntro] = useState(false);
   const [showInvitation, setShowInvitation] = useState(false);
-  const [showModal, setShowModal] = useState(false); // Nuevo estado
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -27,8 +27,8 @@ export default function Home() {
     setShowInvitation(true);
   };
 
-  const toggleModal = () => {
-    setShowModal(!showModal);
+  const toggleModal = (): void => {
+    setShowModal((prev) => !prev);
   };
 
   if (isLoading) {

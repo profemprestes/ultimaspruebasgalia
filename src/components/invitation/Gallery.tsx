@@ -23,8 +23,8 @@ export const Gallery: React.FC<GalleryProps> = ({ images }) => {
     goToImage,
   } = useGallery(images.length);
 
-  const [direction, setDirection] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const [direction, setDirection] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // Manejar la dirección de la transición
   const handlePrevious = () => {
@@ -80,7 +80,7 @@ export const Gallery: React.FC<GalleryProps> = ({ images }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <div className="loader-spinner"></div>
+              <div className="loader-spinner" />
             </motion.div>
           ) : (
             <motion.div
@@ -100,6 +100,9 @@ export const Gallery: React.FC<GalleryProps> = ({ images }) => {
                 src={images[currentImageIndex].src}
                 alt={images[currentImageIndex].caption}
                 className="gallery-image"
+                loading="lazy"
+                width={800}
+                height={600}
               />
               <motion.div 
                 className="image-caption"

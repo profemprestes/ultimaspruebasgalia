@@ -56,7 +56,7 @@ exports.Gallery = function (_a) {
                     x: { type: "spring", stiffness: 300, damping: 30 },
                     opacity: { duration: 0.2 }
                 }, className: "image-wrapper" },
-                react_1["default"].createElement("img", { src: images[currentImageIndex].src, alt: images[currentImageIndex].caption, className: "gallery-image" }),
+                react_1["default"].createElement("img", { src: images[currentImageIndex].src, alt: images[currentImageIndex].caption, className: "gallery-image", loading: "lazy", width: 800, height: 600 }),
                 react_1["default"].createElement(framer_motion_1.motion.div, { className: "image-caption", initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 }, transition: { delay: 0.2 } }, images[currentImageIndex].caption))))),
         react_1["default"].createElement("div", { className: "navigation-buttons" },
             react_1["default"].createElement(framer_motion_1.motion.button, { className: "nav-button", onClick: handlePrevious, whileHover: { scale: 1.1 }, whileTap: { scale: 0.9 } },

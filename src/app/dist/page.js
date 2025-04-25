@@ -12,7 +12,7 @@ function Home() {
     var _a = react_1.useState(true), isLoading = _a[0], setIsLoading = _a[1];
     var _b = react_1.useState(false), showIntro = _b[0], setShowIntro = _b[1];
     var _c = react_1.useState(false), showInvitation = _c[0], setShowInvitation = _c[1];
-    var _d = react_1.useState(false), showModal = _d[0], setShowModal = _d[1]; // Nuevo estado
+    var _d = react_1.useState(false), showModal = _d[0], setShowModal = _d[1];
     react_1.useEffect(function () {
         var timer = setTimeout(function () {
             setIsLoading(false);
@@ -25,7 +25,7 @@ function Home() {
         setShowInvitation(true);
     };
     var toggleModal = function () {
-        setShowModal(!showModal);
+        setShowModal(function (prev) { return !prev; });
     };
     if (isLoading) {
         return react_1["default"].createElement(LoadingScreen_1.LoadingScreen, null);
