@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '¡Te esperamos en el Primer Cumpleaños de Galia!',
     description: 'Acompáñanos a celebrar el primer año de Galia. ¡Confirma tu asistencia y no te pierdas la fiesta!',
-    url: 'https://ultimaspruebasgalia.netlify.app/', // TODO: Replace with your actual production URL
+    url: 'https://galiacumple.netlify.app/', // TODO: Replace with your actual production URL
     siteName: 'Cumpleaños de Galia',
     images: [
       {
-        url: 'https://ultimaspruebasgalia.netlify.app/GaliaHero.svg', // TODO: Replace with an actual OG image URL
+        url: 'https://galiacumple.netlify.app/GaliaHero.svg', // TODO: Replace with an actual OG image URL
         width: 1200,
         height: 630,
         alt: 'Invitación al Primer Cumpleaños de Galia',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '¡Invitación al Primer Cumpleaños de Galia!',
     description: 'Celebra con nosotros el primer año de Galia. ¡Confirma tu asistencia aquí!',
-    images: ['https://ultimaspruebasgalia.netlify.app/GaliaHero.svg'], // TODO: Replace with an actual Twitter image URL
+    images: ['https://galiacumple.netlify.app/GaliaHero.svg'], // TODO: Replace with an actual Twitter image URL
     creator: '@tu_twitter', // TODO: Replace with your Twitter handle if available
   },
   // Robots meta tags for search engines
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   // Other potentially useful meta tags
   authors: [{ name: 'Nombre del Creador/Organizador' }], // TODO: Add author name
   manifest: '/manifest.json', // Optional: Link to a web app manifest
-  metadataBase: new URL('https://ultimaspruebasgalia.netlify.app'), // TODO: Replace with your actual production URL
+  metadataBase: new URL('https://galiacumple.netlify.app'), // TODO: Replace with your actual production URL
   alternates: {
     canonical: '/', // Canonical URL for the homepage
   },
