@@ -1,10 +1,11 @@
-
 .principal-date-container {
   width: 100%;
-  padding: 20px;
+  padding: 40px 20px; /* Increased padding */
   box-sizing: border-box;
-  background: linear-gradient(135deg, var(--chart-2), var(--chart-5)); /* Gradient background */
+  /* Updated subtle gradient background using theme colors */
+  background: linear-gradient(135deg, hsl(var(--primary)/0.1), hsl(var(--secondary)/0.1));
   border-radius: 15px;
+  margin-top: 2rem; /* Add some space from Hero section */
 }
 
 .flower-decoration {
@@ -15,108 +16,142 @@
 .flower-icon {
   width: 50px;
   height: auto;
+  opacity: 0.7;
 }
 
 .title-container {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px; /* Increased margin */
 }
 
-.birthday-title {
-  font-size: 24px;
-  color: var(--foreground); /* Use primary foreground for better contrast */
-}
+/* Removed .birthday-title as h2 styling is now inline */
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
+  gap: 30px; /* Increased gap */
 }
 
 .info-card {
-  background-color: var(--card); /* Semi-transparent white background */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow for emphasis */
-  transition: transform 0.3s ease-in-out;
+  background-color: hsl(var(--card)); /* Use card background color */
+  border-radius: var(--radius-lg); /* Use theme radius */
+  box-shadow: var(--shadow-md); /* Use theme shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid hsl(var(--border)); /* Add subtle border */
 }
 
 .info-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px); /* Subtle lift effect */
+  box-shadow: var(--shadow-lg); /* Increase shadow on hover */
 }
 
 .info-card-inner {
-  padding: 20px;
+  padding: 25px; /* Increased padding */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure cards have same height */
 }
 
 .info-label {
-  font-size: 1.2rem; /* Increased font size */
-  font-weight: bold; /* Make it bold */
-  color: var(--foreground); /* Use a darker color */
-  margin-bottom: 10px;
+  font-size: 1.1rem; /* Adjusted font size */
+  font-weight: 600; /* Slightly bolder */
+  color: hsl(var(--primary)); /* Use primary color for labels */
+  margin-bottom: 8px; /* Adjusted margin */
   display: block;
-  text-transform: uppercase; /* Make it uppercase */
-  letter-spacing: 1px; /* Add letter spacing */
+  /* text-transform: uppercase; /* Removed uppercase */
+  letter-spacing: 0.5px; /* Reduced letter spacing */
 }
 
 .info-value {
-  font-size: 1rem; /* Slightly reduced font size */
-  color: var(--muted-foreground); /* Use a muted color */
+  font-size: 1rem;
+  color: hsl(var(--foreground) / 0.85); /* Use foreground color with slight transparency */
   display: block;
-  margin-bottom: 20px;
-  line-height: 1.4; /* Improve readability */
+  margin-bottom: 25px; /* Increased margin */
+  line-height: 1.5; /* Improved readability */
+  flex-grow: 1; /* Allow value to push button down */
 }
 
 .action-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 12px 24px; /* Increased padding */
+  border-radius: var(--radius-md); /* Use theme radius */
   text-decoration: none;
-  color: var(--primary-foreground);
-  background-color: var(--primary);
-  transition: background-color 0.3s ease;
+  color: hsl(var(--primary-foreground));
+  background-color: hsl(var(--primary));
+  transition: background-color 0.3s ease, transform 0.2s ease;
   border: none; /* Remove default border */
+  font-weight: 500;
+  margin-top: auto; /* Push button to bottom */
 }
 
 .action-button:hover {
-  background-color: var(--secondary);
-  color: var(--foreground);
+  background-color: hsl(var(--primary) / 0.9); /* Slightly darken on hover */
+  transform: scale(1.03); /* Slight scale effect */
 }
+
+.action-button:active {
+    transform: scale(0.98); /* Slight shrink effect on click */
+}
+
 
 .button-icon {
-  margin-right: 10px;
-  font-size: 20px;
+  margin-right: 8px; /* Adjusted spacing */
+  width: 18px; /* Explicit size */
+  height: 18px; /* Explicit size */
 }
 
-.calendar-button {
-  background-color: #a7d1ab;
-}
+/* Remove specific button background colors */
+/* .calendar-button, .location-button will inherit .action-button styles */
 
-.location-button {
-  background-color: #ffeb3b;
-  color: #000;
+.modal-wrapper {
+  margin-top: 20px; /* Consistent margin */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .principal-date-container {
+    padding: 30px 15px; /* Adjust padding */
+  }
   .info-grid {
     grid-template-columns: 1fr; /* Stack items on smaller screens */
+    gap: 20px; /* Reduce gap */
   }
-
   .info-card {
-    margin-bottom: 10px; /* Add spacing between cards */
+    margin-bottom: 15px; /* Add spacing between cards */
   }
-
+  .info-label {
+    font-size: 1rem;
+  }
   .info-value {
-    font-size: 16px; /* Adjust font size for smaller screens */
+    font-size: 0.95rem; /* Adjust font size for smaller screens */
+    margin-bottom: 20px;
+  }
+   .action-button {
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 0.95rem;
+  }
+  .button-icon {
+    width: 16px;
+    height: 16px;
   }
 }
 
 /* Even smaller screens */
 @media (max-width: 480px) {
+    .principal-date-container {
+        padding: 25px 10px;
+    }
+   .title-container h2 {
+       font-size: 3.5rem; /* Adjust title size */
+   }
   .info-value {
-    font-size: 1rem; /* Further reduce font size */
+    font-size: 0.9rem; /* Further reduce font size */
+  }
+  .action-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }

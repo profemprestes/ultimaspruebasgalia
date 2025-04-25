@@ -2,7 +2,8 @@
 
 import React from "react";
 import "@/styles/DetailsSection.css";
-import {ConfirmacionModal} from "@/components/invitation/ConfirmacionModal";
+import { ConfirmacionModal } from "@/components/invitation/ConfirmacionModal";
+import { CalendarDays, MapPin } from "lucide-react"; // Import Lucide icons
 
 export const DetailsSection: React.FC = () => {
   return (
@@ -13,10 +14,14 @@ export const DetailsSection: React.FC = () => {
         </div>
 
         <div className="title-container">
-          <h3 className="birthday-title">¡Galia cumple 1 añito!</h3>
+          {/* Updated heading style */}
+          <h2 className="text-center text-5xl md:text-6xl font-['Parisienne',_cursive] text-primary">
+            Mi Fiesta
+          </h2>
         </div>
 
         <div className="info-grid">
+          {/* Card 1: When */}
           <div className="info-card">
             <div className="info-card-inner">
               <p className="info-label">Cuándo</p>
@@ -24,15 +29,16 @@ export const DetailsSection: React.FC = () => {
               <a
                 href="https://calendar.app.google/ursVLnsMBwkJSUVs8"
                 target="_blank"
-                className="action-button calendar-button"
+                className="action-button" // Simplified class, styling via CSS
                 rel="noopener noreferrer"
               >
-                <span className="button-icon">📅</span>
+                <CalendarDays className="button-icon" /> {/* Lucide Icon */}
                 <span className="button-text">Agendar</span>
               </a>
             </div>
           </div>
 
+          {/* Card 2: Where */}
           <div className="info-card">
             <div className="info-card-inner">
               <p className="info-label">Dónde</p>
@@ -40,21 +46,25 @@ export const DetailsSection: React.FC = () => {
               <a
                 href="https://maps.app.goo.gl/nB1U1MJTKiEXN33A6"
                 target="_blank"
-                className="action-button location-button"
+                className="action-button" // Simplified class, styling via CSS
                 rel="noopener noreferrer"
               >
-                <span className="button-icon">📍</span>
+                <MapPin className="button-icon" /> {/* Lucide Icon */}
                 <span className="button-text">¿Cómo llegar?</span>
               </a>
             </div>
           </div>
 
+          {/* Card 3: Confirm Assistance */}
           <div className="info-card">
             <div className="info-card-inner">
               <p className="info-label">Confirma asistencia</p>
               <span className="info-value"> Me gustaría que confirmes tu asistencia </span>
               <div className="modal-wrapper">
-                <ConfirmacionModal />
+                {/* Pass confirm function directly */}
+                <ConfirmacionModal onConfirm={(name, quantity) => {
+                   console.log(`Confirmado: Nombre: ${name}, Cantidad: ${quantity}`);
+                }} />
               </div>
             </div>
           </div>
