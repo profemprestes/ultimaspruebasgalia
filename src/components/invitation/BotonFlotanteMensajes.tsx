@@ -1,35 +1,42 @@
 "use client";
 
 import React, { useState } from "react";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare } from "lucide-react"; // Correct icon as per existing code
 import MensajeModal from "./MensajeModal"; // Import the modal component
+import { Button } from "@/components/ui/button"; // Import Shadcn Button
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"; // Import Tooltip components
 
 export default function BotonFlotanteMensajes() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
     <>
-      <div
-        className="fixed bottom-4 right-4 z-50 flex items-center space-x-2 cursor-pointer group"
-        onMouseEnter={() => setShowTooltip(true)}
-        onMouseLeave={() => setShowTooltip(false)}
-        onClick={handleOpenModal}
-      >
-        <div className="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg transition-colors duration-300">
-          <MessageSquare size={24} />
-        </div>
-        <span
-          className={`bg-white text-black text-sm px-3 py-1 rounded-lg shadow transition-all duration-300 ${
-            showTooltip ? "opacity-100 ml-2" : "opacity-0 ml-0"
-          }`}
-        >
-          Dejar un Mensaje
-        </span>
-      </div>
+      <TooltipProvider delayDuration={100}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="default" // Use Shadcn button styling
+              size="icon"
+              className="fixed bottom-4 right-4 z-50 rounded-full shadow-lg w-14 h-14 bg-accent hover:bg-accent/90 text-accent-foreground animate-bounce" // Added bounce animation
+              onClick={handleOpenModal}
+              aria-label="Dejar un mensaje"
+            >
+              <MessageSquare size={24} />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent side="left" sideOffset={5}>
+            <p>Dejar un Mensaje</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
 
       <MensajeModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
