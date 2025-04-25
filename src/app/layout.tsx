@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '¡Primer Cumpleaños de Galia!',
     description: 'Acompáñanos a celebrar el primer año de aventuras de Galia. ¡RSVP aquí!',
-    url: 'https://tu-sitio-web.com', // Replace with your actual URL
+    url: 'https://galiacumple.netlify.app/, // Replace with your actual URL
     siteName: 'Galia\'s Birthday',
     images: [
       {
-        url: 'https://tu-sitio-web.com/images/galias-birthday.jpg', // Replace with an actual image URL
+        url: 'https://galiacumple.netlify.app/images/galias-birthday.jpg', // Replace with an actual image URL
         width: 1200,
         height: 630,
         alt: 'Galia\'s First Birthday Celebration',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '¡Primer Cumpleaños de Galia!',
     description: 'Acompáñanos a celebrar el primer año de aventuras de Galia. ¡RSVP aquí!',
-    images: ['https://tu-sitio-web.com/images/galias-birthday.jpg'], // Replace with an actual image URL
+    images: ['https://galiacumple.netlify.app/images/galias-birthday.jpg'], // Replace with an actual image URL
     creator: '@tu_usuario', // Replace with your Twitter handle
   },
   robots: {
