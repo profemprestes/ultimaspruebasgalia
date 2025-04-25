@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'Galia\'s Birthday',
     images: [
       {
-        url: 'https://galiacumple.netlify.app/images/galias-birthday.jpg', // Replace with an actual image URL
+        url: '/GaliaHero1.gif', // Replace with an actual image URL
         width: 1200,
         height: 630,
         alt: 'Galia\'s First Birthday Celebration',
