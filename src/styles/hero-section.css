@@ -1,178 +1,210 @@
-/* General styles */
+/* General styles for the hero section */
 .hero {
-  position: relative;
-  width: 100%;
-  min-height: 50vh; /* Adjust to a minimum height for smaller screens */
-  overflow: hidden;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: hsl(var(--background)/ 0.8); /* Use background color with some transparency */
+  background-image: var(--hero-background-url, url('/herogalia.gif')); /* Default background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Creates parallax effect */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
   text-align: center;
-  color: var(--foreground);
-  font-family: sans-serif;
-  padding: 20px; /* Add padding for better spacing on small screens */
+  padding: 2rem 1rem; /* Add padding for smaller screens */
+  box-sizing: border-box;
 }
 
+/* Background container for parallax */
 .hero__background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -1; /* Place background behind content */
+  overflow: hidden; /* Prevent image overflow if needed */
 }
 
 .hero__background img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Cover the container */
+  display: block; /* Remove extra space below image */
 }
 
+/* Main card styles */
 .hero__card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 15px;
-  padding: 20px; /* Adjust padding for smaller screens */
+  background: hsla(var(--card) / 0.9); /* Card background with transparency */
+  border-radius: var(--radius-lg); /* Use theme radius */
+  padding: clamp(20px, 5vw, 40px); /* Responsive padding */
   text-align: center;
-  box-shadow: 0 8px 16px #0003;
-  max-width: 90%;
-  margin: 10px; /* Adjust margin for smaller screens */
+  box-shadow: var(--shadow-lg); /* Use theme shadow */
+  max-width: 90%; /* Limit width */
+  width: fit-content; /* Adjust width to content */
+  margin: 20px; /* Add margin */
+  border: 1px solid hsl(var(--border)); /* Subtle border */
 }
 
+/* Animated image specific styles */
+.hero__animated-image {
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto 1.5rem auto; /* Center image and add bottom margin */
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Info container inside the card */
 .hero__info {
-  margin-bottom: 20px; /* Adjust margin for smaller screens */
+  margin-bottom: 2rem; /* Space below info block */
 }
 
+/* Greeting text styles */
 .hero__greeting {
-  font-size: 1.4rem; /* Adjust font size for smaller screens */
-  color: var(--hero-text-secondary);
-  margin-bottom: 10px;
+  font-size: clamp(1.2rem, 3vw, 1.6rem); /* Responsive font size */
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.5rem;
 }
 
+/* Main celebration heading */
 .hero__celebration {
-  font-size: 2.6rem; /* Adjust font size for smaller screens */
+  font-family: 'Parisienne', cursive; /* Apply special font */
+  font-size: clamp(2.5rem, 6vw, 3.5rem); /* Responsive font size */
   line-height: 1.2;
-  margin-bottom: 15px;
-  color: var(--primary);
+  margin-bottom: 0.75rem;
+  color: hsl(var(--primary)); /* Use primary color */
 }
 
-.hero__celebration-primer {
-  color: var(--secondary);
+/* Style for the "Primer Añito" part */
+.hero__age {
+  font-weight: 700; /* Make it bold */
+  color: hsl(var(--secondary)); /* Use secondary color */
 }
 
+/* Name text styles */
 .hero__name {
-  font-size: 1.8rem; /* Adjust font size for smaller screens */
-  color: var(--foreground);
-  margin-bottom: 20px;
+  font-family: 'Baloo 2', sans-serif; /* Use body font */
+  font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
+  color: hsl(var(--foreground));
+  margin-bottom: 1.5rem;
 }
 
+/* Event details container */
 .hero__event-details {
-  font-size: 1rem; /* Adjust font size for smaller screens */
-  color: var(--hero-text-secondary);
-  margin-bottom: 10px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* Responsive font size */
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 0.5rem; /* Space between icon and text */
 }
 
+/* Icon styles within event details */
 .hero__icon {
-  width: 18px; /* Adjust icon size for smaller screens */
-  height: 18px; /* Adjust icon size for smaller screens */
-  stroke: var(--foreground);
+  width: clamp(16px, 4vw, 20px); /* Responsive icon size */
+  height: clamp(16px, 4vw, 20px);
+  /* Color is set directly on the SVG elements via props or inline styles */
+}
+
+/* Invitation text container */
+.hero__invitation {
+  margin-top: 1.5rem; /* Space above invitation text */
 }
 
 .hero__invitation-text {
-  font-size: 1.05rem; /* Adjust font size for smaller screens */
+  font-size: clamp(1rem, 2.8vw, 1.15rem); /* Responsive font size */
   font-style: italic;
-  color: var(--foreground);
-  margin-top: 20px;
+  color: hsl(var(--foreground));
 }
 
+/* Scroll indicator styles */
 .hero__scroll-indicator {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 0.3rem; /* Space between text and arrow */
   cursor: pointer;
-  color: var(--primary);
-  margin-top: 20px; /* Adjust margin for smaller screens */
+  color: hsl(var(--primary)); /* Use primary color */
+  margin-top: 2rem; /* Space above scroll indicator */
 }
 
-.hero__scroll-indicator-text {
-  font-size: 0.9rem;
-  color: var(--primary);
+.hero__scroll-text {
+  font-size: clamp(0.8rem, 2vw, 0.9rem); /* Responsive font size */
 }
 
+/* Scroll arrow styles */
 .hero__scroll-arrow {
-  width: 35px;
-  height: auto;
-  animation: bounce 1.5s infinite;
+   width: clamp(25px, 6vw, 35px); /* Responsive arrow size */
+   height: auto;
+   animation: bounceUpDown 1.5s infinite ease-in-out; /* Vertical bounce animation */
 }
 
+
+/* Event in progress message */
 .hero__event-in-progress {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: green;
+   font-size: clamp(1.1rem, 3vw, 1.5rem);
+   font-weight: 700;
+   color: hsl(120, 60%, 40%); /* Green color */
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+ }
+
+
+/* Keyframes for animations */
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px); /* Adjust bounce height */
+  }
 }
 
-.hero__animated-image {
-  max-width: 150px;
-  height: auto;
-  margin-bottom: 20px; /* Adjust margin for smaller screens */
-  border-radius: 10px;
-  box-shadow: 0 2px 5px #0003;
-}
-
-/* Media queries for responsiveness */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .hero {
-    padding: 30px 10px; /* Further adjust padding for smaller screens */
-    min-height: auto; /* Allow the content to dictate the height */
+    min-height: auto; /* Adjust height for smaller screens */
+    padding: 4rem 1rem; /* Adjust padding */
   }
 
   .hero__card {
-    padding: 20px; /* Further adjust padding for smaller screens */
-    margin: 10px; /* Further adjust margin for smaller screens */
-  }
-
-  .hero__greeting {
-    font-size: 1.2rem; /* Further adjust font size for smaller screens */
-  }
-
-  .hero__celebration {
-    font-size: 2rem; /* Further adjust font size for smaller screens */
-  }
-
-  .hero__name {
-    font-size: 1.5rem; /* Further adjust font size for smaller screens */
+    padding: 1.5rem; /* Reduce padding */
+    margin: 1rem; /* Adjust margin */
   }
 
   .hero__event-details {
-    font-size: 0.9rem; /* Further adjust font size for smaller screens */
-    flex-direction: column; /* Stack the location and date on top of each other */
-    align-items: center;
+    flex-direction: column; /* Stack details vertically */
+    gap: 0.3rem;
+    margin-bottom: 1rem;
   }
 
-  .hero__invitation-text {
-    font-size: 0.95rem; /* Further adjust font size for smaller screens */
-  }
-
-  .hero__icon {
-    width: 16px; /* Further adjust icon size for smaller screens */
-    height: 16px; /* Further adjust icon size for smaller screens */
-  }
-  .hero__scroll-arrow {
-      width: 25px;
-  }
+   .hero__scroll-indicator {
+     margin-top: 1.5rem;
+   }
 }
 
-/* Specific element animations */
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(15px);
-  }
+@media (max-width: 480px) {
+   .hero {
+     padding: 3rem 0.5rem;
+   }
+   .hero__card {
+     padding: 1rem;
+   }
+   .hero__animated-image {
+     max-width: 120px;
+   }
+   .hero__celebration {
+    font-size: 2.2rem; /* Further adjust font size */
+   }
+   .hero__name {
+    font-size: 1.4rem; /* Further adjust font size */
+   }
+   .hero__invitation-text {
+    font-size: 0.95rem; /* Further adjust font size */
+   }
 }

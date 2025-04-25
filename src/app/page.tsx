@@ -9,9 +9,7 @@ import { MapLocation } from "@/components/invitation/MapLocation";
 import { RsvpForm } from "@/components/invitation/RsvpForm";
 import { ThankYouGenerator } from "@/components/invitation/ThankYouGenerator";
 import { CONSTANTS } from "@/lib/constants";
-// Removed PartySection import
 
-// Removed ClientOnly import as the component itself manages client-side state
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,19 +31,19 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      {/* Removed ClientOnly wrapper */}
+    <div className="flex flex-col items-center min-h-screen">
       {isLoading ? (
         <LoadingScreen />
       ) : showIntro ? (
         <IntroSection onProceed={handleProceedToInvitation} />
       ) : showInvitation ? (
-        <>
+        <main className="w-full">
           <HeroSection />
           <DetailsSection />
-          {/* Removed PartySection component */}
-          {/* Consider adding MapLocation, RsvpForm, ThankYouGenerator here if needed */}
-        </>
+          {/* <MapLocation /> */}
+          {/* <RsvpForm /> */}
+          {/* <ThankYouGenerator /> */}
+        </main>
       ) : null}
     </div>
   );

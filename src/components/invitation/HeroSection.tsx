@@ -1,12 +1,11 @@
 'use client';
 
-import React, {useEffect, useRef, useState} from 'react';
-import '@/styles/hero-section.css';
-import {Button} from '@/components/ui/button';
-import {Card, CardContent} from '@/components/ui/card';
-import {MapPinIcon, CalendarIcon} from 'lucide-react';
-import {CountdownTimer} from "@/components/invitation/CountdownTimer";
-import {CONSTANTS} from "@/lib/constants";
+import React, { useEffect, useRef, useState } from 'react';
+import '@/styles/hero-section.css'; // Ensure this CSS file exists and is styled
+import { Card, CardContent } from '@/components/ui/card'; // Ensure Card and CardContent are imported
+import { MapPin, Calendar } from 'lucide-react'; // Import icons
+import { CountdownTimer } from "@/components/invitation/CountdownTimer";
+import { CONSTANTS } from "@/lib/constants";
 
 export const HeroSection: React.FC = () => {
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -41,49 +40,65 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="hero">
+    <section className="hero" data-target="countdown-section">
       <div className="hero__background" ref={backgroundRef}>
-        <img src="/herogalia.gif" alt="Celebration background" />
+        {/* Parallax background image */}
+        <img
+          alt="Imagen de fondo con efecto parallax"
+          src="/herogalia.gif"
+          id="parallax-hero"
+        />
       </div>
-      <Card className="hero__card">
-        <CardContent>
+      <Card className="hero__card"> {/* Use ShadCN Card */}
+        <CardContent className="flex flex-col items-center p-6"> {/* Use CardContent and Tailwind for layout */}
+          {/* Animated image of Galia */}
           <img
+            alt="Imagen animada de Galia"
             src="/sobremi.gif"
-            alt="Galia"
-            className="hero__animated-image"
+            className="hero__animated-image mb-4" // Added margin-bottom
+            loading="lazy"
           />
-          <h1 className="hero__celebration">
-            Mi <span className="hero__celebration-primer">Primer</span> Añito
-          </h1>
-          <h2 className="hero__name">Soy Galia</h2>
-          <div className="hero__event-details">
-            <p>
-              <MapPinIcon className="hero__icon" stroke="var(--foreground)" />
+          <div className="hero__info text-center"> {/* Centered text */}
+            {/* Greeting text */}
+            <p className="hero__greeting text-lg text-muted-foreground mb-2">¡Acompáñame a celebrar!</p>
+            {/* Main celebration title */}
+            <h1 className="hero__celebration text-4xl font-bold mb-1">
+              Mi <span className="hero__age text-primary">Primer Añito</span>
+            </h1>
+            {/* Name */}
+            <p className="hero__name text-2xl text-foreground mb-4">Soy Galia</p>
+            {/* Event location details */}
+            <p className="hero__event-details flex items-center justify-center gap-2 text-muted-foreground mb-1">
+              <MapPin className="hero__icon hero__icon--location w-5 h-5 text-primary" /> {/* Lucide icon */}
               Club Ciclista Juanico
             </p>
-            <p>
-              <CalendarIcon className="hero__icon" stroke="var(--foreground)" size={20}/>
-              10 de Mayo de 2025 | 13:00
+            {/* Event date and time details */}
+            <p className="hero__event-details flex items-center justify-center gap-2 text-muted-foreground mb-4">
+               <Calendar className="hero__icon hero__icon--time w-5 h-5 text-primary" /> {/* Lucide icon */}
+               10 de Mayo de 2025 | 13:00
             </p>
+
+            {/* Conditionally render Countdown Timer or event in progress message */}
+             {!eventInProgress ? (
+               <CountdownTimer eventDate={CONSTANTS.eventDate} />
+             ) : (
+               <p className="hero__event-in-progress text-xl font-semibold text-green-600 my-4">¡El evento está en curso!</p>
+             )}
+
+            {/* Invitation text */}
+            <div className="hero__invitation mt-4">
+              <p className="hero__invitation-text text-foreground italic">
+                ¡Tu presencia hará este día aún más especial!
+              </p>
+            </div>
           </div>
-
-          {/* Conditionally render either the countdown timer or the event in progress message */}
-          {!eventInProgress ? (
-            <CountdownTimer eventDate={CONSTANTS.eventDate} />
-          ) : (
-            <p className="hero__event-in-progress">¡El evento está en curso!</p>
-          )}
-
-          <p className="hero__invitation-text">
-            ¡Tu presencia hará este día aún más especial!
-          </p>
-          {/*<Button>Confirmar Asistencia</Button>*/}
+           {/* Scroll indicator */}
+            <div className="hero__scroll-indicator flex flex-col items-center gap-1 cursor-pointer mt-6" onClick={scrollToDetails}>
+                 <span className="hero__scroll-text text-sm text-primary">Desliza para ver más</span>
+                 <img src="/arrow_down.gif" alt="Desliza hacia abajo" className="hero__scroll-arrow w-8 h-auto" />
+            </div>
         </CardContent>
       </Card>
-      <div className="hero__scroll-indicator" onClick={scrollToDetails}>
-        <span  className="hero__scroll-indicator-text">Desliza para ver más</span>
-        <img src="/arrow_down.gif" alt="Desliza hacia abajo" className="hero__scroll-arrow" />
-      </div>
     </section>
   );
 };
