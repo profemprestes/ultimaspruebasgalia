@@ -10,7 +10,7 @@ import { RsvpForm } from "@/components/invitation/RsvpForm";
 import { ThankYouGenerator } from "@/components/invitation/ThankYouGenerator";
 import { CONSTANTS } from "@/lib/constants";
 import PartySection from "@/components/invitation/PartySection";
-import { ClientOnly } from "@/components/ClientOnly"; // Import ClientOnly
+// Removed ClientOnly import as the component itself manages client-side state
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,20 +33,19 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <ClientOnly> {/* Wrap the dynamic content */}
-        {isLoading ? (
-          <LoadingScreen />
-        ) : showIntro ? (
-          <IntroSection onProceed={handleProceedToInvitation} />
-        ) : showInvitation ? (
-          <>
-            <HeroSection />
-            <DetailsSection />
-            <PartySection />
-            {/* Consider adding MapLocation, RsvpForm, ThankYouGenerator here if needed */}
-          </>
-        ) : null}
-      </ClientOnly>
+      {/* Removed ClientOnly wrapper */}
+      {isLoading ? (
+        <LoadingScreen />
+      ) : showIntro ? (
+        <IntroSection onProceed={handleProceedToInvitation} />
+      ) : showInvitation ? (
+        <>
+          <HeroSection />
+          <DetailsSection />
+          <PartySection />
+          {/* Consider adding MapLocation, RsvpForm, ThankYouGenerator here if needed */}
+        </>
+      ) : null}
     </div>
   );
 }

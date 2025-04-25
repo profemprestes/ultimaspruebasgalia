@@ -2,7 +2,6 @@ import type {Metadata} from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/components/theme-provider';
-import { ClientOnly } from '@/components/ClientOnly'; // Import ClientOnly
 
 export const metadata: Metadata = {
   title: '¡Primer Cumpleaños de Galia!',
@@ -64,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
     <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider>
+        <ThemeProvider> {/* ThemeProvider already handles mounting */}
           {children}
         </ThemeProvider>
     </body>
