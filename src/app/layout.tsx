@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'Galia\'s Birthday',
     images: [
       {
-        url: '/GaliaHero1.gif', // Replace with an actual image URL
+        url: 'https://ultimaspruebasgalia.netlify.app/GaliaHero.svg', // Replace with an actual image URL
         width: 1200,
         height: 630,
         alt: 'Galia\'s First Birthday Celebration',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '¡Primer Cumpleaños de Galia!',
     description: 'Acompáñanos a celebrar el primer año de aventuras de Galia. ¡RSVP aquí!',
-    images: ['https://galiacumple.netlify.app/images/galias-birthday.jpg'], // Replace with an actual image URL
-    creator: '@tu_usuario', // Replace with your Twitter handle
+    images: ['https://ultimaspruebasgalia.netlify.app/GaliaHero.svg'], // Replace with an actual image URL
+    creator: '@bomberoxxx', // Replace with your Twitter handle
   },
   robots: {
     index: true,
