@@ -54,7 +54,7 @@ export const HeroSection: React.FC = () => {
           {/* Animated image of Galia */}
           <img
             alt="Imagen animada de Galia"
-            src="/sobremi.gif"
+            src="/GaliaHero (1).gif"
             className="hero__animated-image mb-4" // Added margin-bottom
             loading="lazy"
           />
